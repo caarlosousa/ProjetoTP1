@@ -100,19 +100,19 @@ Desenvolvedor ComandoPesquisarDesenvolvedor::getResultado() {
     Telefone telefone;
     Desenvolvedor desenvolvedor;
 
-    // Remover nome;
-    if (listaResultado.empty())
-            throw "not found";
-    resultado = listaResultado.back();
-    listaResultado.pop_back();
-    nome.setValor(resultado.getValorColuna());
-
     // Remover matricula;
     if (listaResultado.empty())
             throw "not found";
     resultado = listaResultado.back();
     listaResultado.pop_back();
     matricula.setValor(resultado.getValorColuna());
+
+    // Remover nome;
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    nome.setValor(resultado.getValorColuna());
 
     // Remover senha;
     if (listaResultado.empty())
