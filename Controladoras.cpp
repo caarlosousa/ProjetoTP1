@@ -1,4 +1,4 @@
-//SERVI�O
+//SERVICO
 #include "Controladoras.h"
 #include "Dominios.h"
 #include "Entidades.h"
@@ -236,7 +236,7 @@ void CntrIADesenvolvedor::visualizar(Matricula matricula) {
 
     char texto1[] = "Aqui estao os seus dados atuais: ";
     char texto2[] = "Nome: ";
-    char texto3[] = "Matr�cula: ";
+    char texto3[] = "Matricula: ";
     char texto4[] = "Senha: ";
     char texto5[] = "Telefone: ";
     char texto6[] = "Digite qualquer tecla para continuar.";
@@ -260,7 +260,7 @@ void CntrIADesenvolvedor::editar(Matricula matricula) {
 
     char texto1[] = "Aqui estao os seus dados atuais: ";
     char texto2[] = "Nome: ";
-    char texto3[] = "Matr�cula: ";
+    char texto3[] = "Matricula: ";
     char texto4[] = "Senha: ";
     char texto5[] = "Telefone: ";
     char texto6[] = "Insira seus novos dados: ";
@@ -359,7 +359,7 @@ bool CntrIADesenvolvedor::descadastrar(Matricula matricula) {
     return false;
 }
 
-//SERVI�O DESENVOLVEDOR
+//SERVICO DESENVOLVEDOR
 
 bool CntrISDesenvolvedor::cadastrar(const Desenvolvedor &desenvolvedor) {
     ComandoCadastrarDesenvolvedor cadastrarDesenvolvedor(desenvolvedor);
