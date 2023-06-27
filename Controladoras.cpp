@@ -219,7 +219,7 @@ void CntrIADesenvolvedor::cadastrar() {
     Desenvolvedor existente;
     existente = cntrISDesenvolvedor->visualizar(matricula);
 
-    if(existente.getMatricula().getValor() == matricula) {
+    if(existente.getMatricula().getValor() == desenvolvedor.getMatricula().getValor()) {
         cout << texto9 << endl;
         getch();
         return;
@@ -535,4 +535,12 @@ void CntrIATeste::cadastrar(Matricula matricula) {
 void CntrIATeste::visualizar(Matricula matricula) {
 
 
+}
+
+void CntrIATeste::editar(Matricula matricula) {
+
+}
+
+bool CntrIATeste::descadastrar(Matricula matricula) {
+    return true;
 }
