@@ -176,11 +176,7 @@ void CntrIADesenvolvedor::cadastrar() {
     char texto5[] = "Telefone:";
     char texto6[] = "Dados em formato invalido. Pressione qualquer tecla para continuar.";
     char texto7[] = "Desenvolvedor cadastrado com sucesso. Pressione qualquer tecla para continuar.";
-<<<<<<< HEAD
     char texto8[] = "Falha ao realizar o cadastramento. Pressione qualquer tecla para continuar.";
-=======
-    char texto8[] = "Falha ao realizar o cadastramento. Pressione qualquer tecla para continuar.";
->>>>>>> 72d1eca52c6d16b7191560eaae7d26584251fb47
     char texto9[] = "Desenvolvedor ja cadastrado anteriormente. Pressione qualquer tecla para continuar.";
 
     char campo1[80], campo2[80], campo3[80], campo4[80];
@@ -462,7 +458,6 @@ void CntrIATeste::executar(Matricula matricula) {
         campo = getch() - 48;
 
         switch(campo) {
-<<<<<<< HEAD
             case 1:
                     visualizar(matricula);
                     break;
@@ -476,27 +471,11 @@ void CntrIATeste::executar(Matricula matricula) {
                     descadastrar(matricula);
                     break;
             case 5:
-=======
-            case 1:
-                    visualizar(matricula);
-                    break;
-            case 2:
-                    cadastrar(matricula);
-                    break;
-            case 3:
-                    editar(matricula);
-                    break;
-            case 4:
-                    descadastrar(matricula);
-                    break;
-            case 5:
->>>>>>> 72d1eca52c6d16b7191560eaae7d26584251fb47
                     apresentar = false;
                     break;
         }
     }
 }
-<<<<<<< HEAD
 
 void CntrIATeste::cadastrar(Matricula matricula) {
 
@@ -564,72 +543,3 @@ void CntrIATeste::editar(Matricula matricula) {
 bool CntrIATeste::descadastrar(Matricula matricula) {
     return true;
 }
-=======
-
-void CntrIATeste::cadastrar(Matricula matricula) {
-
-    char texto1[] = "Insira os dados do seu teste: ";
-    char texto2[] = "Codigo:";
-    char texto3[] = "Nome:";
-    char texto4[] = "Classe:";
-    char texto5[] = "Teste cadastrado com sucesso. Digite algo para continuar.";
-    char texto6[] = "Erro ao cadastrar teste. Digite algo para continuar.";
-    char texto7[] = "Formato invalido. Digite algo para continuar.";
-
-    char campo1[80], campo2[80], campo3[80];
-
-    Codigo codigo;
-    Texto nome;
-    Classe classe;
-
-    CLR_SCR;
-
-    cout << texto1 << endl;
-    cout << texto2 << " ";
-    cin >> campo1;
-    cout << texto3 << " ";
-    cin >> campo2;
-    cout << texto4 << " ";
-    cin >> campo3;
-
-    try {
-        codigo.setValor(string(campo1));
-        nome.setValor(string(campo2));
-        classe.setValor(string(campo3));
-    }
-    catch(invalid_argument &excecao) {
-        cout << texto7 << endl;
-        getch();
-        return;
-    }
-
-    Teste teste;
-    teste.setCodigo(codigo);
-    teste.setNome(nome);
-    teste.setClasse(classe);
-
-    if(cntrISTeste->cadastrar(teste)) {
-        cout << texto5 << endl;
-        getch();
-        return;
-    }
-
-    cout << texto6 << endl;
-    getch();
-
-    return;
-}
-
-void CntrIATeste::visualizar(Matricula matricula) {
-
-
-}
-
-void CntrIATeste::editar(Matricula matricula) {
-
-}
-
-bool CntrIATeste::descadastrar(Matricula matricula) {
-    return true;
-}
->>>>>>> 72d1eca52c6d16b7191560eaae7d26584251fb47
