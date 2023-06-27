@@ -536,3 +536,11 @@ void CntrIATeste::visualizar(Matricula matricula) {
 
 
 }
+
+void CntrIATeste::editar(Matricula matricula) {
+
+}
+
+bool CntrIATeste::descadastrar(Matricula matricula) {
+    return true;
+}
