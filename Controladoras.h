@@ -61,6 +61,10 @@ void inline CntrIADesenvolvedor::setCntrISDesenvolvedor(ISDesenvolvedor *cntrISD
 class CntrIATeste: public IATeste {
     private:
         ISTeste *cntrISTeste;
+        void cadastrar(Matricula);
+        void visualizar(Matricula);
+        void editar(Matricula);
+        bool descadastrar(Matricula);
     public:
         void executar(Matricula);
         void setCntrISTeste(ISTeste*);
