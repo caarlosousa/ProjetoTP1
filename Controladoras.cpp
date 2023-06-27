@@ -216,14 +216,6 @@ void CntrIADesenvolvedor::cadastrar() {
     desenvolvedor.setSenha(senha);
     desenvolvedor.setTelefone(telefone);
 
-    Desenvolvedor existente;
-    existente = cntrISDesenvolvedor->visualizar(matricula);
-    if (existente.getMatricula().getValor() == desenvolvedor.getMatricula().getValor()) {
-        cout << texto9 << endl;
-        getch();
-        return;
-    }
-
     if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
         cout << texto7 << endl;
         getch();
@@ -296,11 +288,15 @@ void CntrIADesenvolvedor::editar(Matricula matricula) {
             cout << texto5 << desenvolvedor.getTelefone().getValor() << endl;
             cout << texto13 << endl;
             cout << texto6 << endl;
-            cout << texto2 << "";
+
+            cout << texto2;
+            cin.ignore();
             getline(cin, campo1);
-            cout << texto4 << "";
+
+            cout << texto4;
             getline(cin, campo2);
-            cout << texto5 << "";
+
+            cout << texto5;
             getline(cin, campo3);
 
             nome.setValor(campo1);
@@ -542,5 +538,53 @@ void CntrIATeste::editar(Matricula matricula) {
 }
 
 bool CntrIATeste::descadastrar(Matricula matricula) {
-    return true;
+
+   /* char texto1[] = "Insira o codigo do teste que deseja descadastrar: ";
+    char texto2[] = "Tem certeza que deseja descadastrar Teste?";
+    char texto3[] = "1 - Sim.";
+    char texto4[] = "2 - Nao.";
+    char texto5[] = "Falha na exclusao. Tente novamente.";
+    char texto6[] = "Descadastramento cancelado.";
+    char texto7[] = "Descadastramento realizado com sucesso";
+
+    int campo;
+    string campoCodigo;
+    Codigo codigo;
+
+    cout << texto1 << endl;
+    getline(cin, campoCodigo);
+
+    try {
+        codigo.setValor(campoCodigo);
+    }
+    catch(invalid_argument &excecao) {
+        cout << "Teste nao encontrado. Pressione qualquer tecla para continaur." << endl;
+        getch();
+        return false;
+    }
+
+    CLR_SCR;
+
+    cout << texto2 << endl;
+    cout << texto3 << endl;
+    cout << texto4 << endl;
+
+    campo = getch() - 48;
+
+    switch(campo) {
+        case 1:
+            if (cntrISTeste->descadastrar(codigo)) {
+                cout << texto7 << endl;
+                return true;
+            } else {
+                cout << texto5 << endl;
+                getch();
+                return false;
+            }
+        case 2:
+            cout << texto6 << endl;
+            getch();
+            return false;
+    }*/
+    return false;
 }

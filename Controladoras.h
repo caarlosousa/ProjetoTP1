@@ -93,9 +93,9 @@ class CntrISDesenvolvedor: public ISDesenvolvedor {
 class CntrISTeste: public ISTeste {
     public:
         bool cadastrar(const Teste&);
-        bool visualizar(const Teste&);
+        Teste visualizar(const Codigo&);
         bool editar(const Teste&);
-        bool descadastrar(const Teste&);
+        bool descadastrar(const Codigo&);
 };
 
 #endif // CONTROLADORAS_H_INCLUDED
