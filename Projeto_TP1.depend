@@ -56,11 +56,12 @@
 
 1687543350 D
 
-1687538336 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.cpp
+1687828327 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.cpp
+	"Dominios.h"
 	"Dominios.h"
 	"Dominios.h"
 
-1687538336 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.h
+1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.h
 	<string>
 	<iostream>
 	<unordered_set>
@@ -71,8 +72,19 @@
 	<unordered_set>
 	<stdexcept>
 	<regex>
+	<string>
+	<iostream>
+	<unordered_set>
+	<stdexcept>
+	<regex>
 
-1687611389 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/main.cpp
+1687829002 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/main.cpp
+	<iostream>
+	<string>
+	"Dominios.h"
+	"Entidades.h"
+	"Interfaces.h"
+	"Controladoras.h"
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -88,33 +100,40 @@
 
 1687800858 oras.h"
 
-1687544090 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Entidades.h
+1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Entidades.h
+	"Dominios.h"
 	"Dominios.h"
 	"Dominios.h"
 
-1687610656 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Interfaces.h
+1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 	"acessoDB.h"
 	<stdexcept>
+	"acessoDB.h"
+	<stdexcept>
 
-1687611383 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.h
+1687875037 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.h
+	"Interfaces.h"
 	"Interfaces.h"
 	"Interfaces.h"
 
 1687797953 s.h"
 
-1687538336 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.cpp
+1687828101 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.cpp
+	"Testes.h"
 	"Testes.h"
 	"Testes.h"
 
-1687538336 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.h
+1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.h
 	"Dominios.h"
 	"Entidades.h"
 	"Dominios.h"
 	"Entidades.h"
+	"Dominios.h"
+	"Entidades.h"
 
-1687610730 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.h
+1687828840 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -131,12 +150,25 @@
 	<curses.h>
 	<string>
 	<stdio.h>
+	"Dominios.h"
+	"Entidades.h"
+	<list>
+	"sqlite3.h"
+	<iostream>
+	<curses.h>
+	<string>
+	<stdio.h>
 
-1687612062 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.cpp
+1687828890 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.cpp
 	"Controladoras.h"
 	"Controladoras.h"
+	"Controladoras.h"
+	"Dominios.h"
+	"Entidades.h"
+	"acessoDB.h"
 
-1687538336 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/sqlite3.h
+1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/sqlite3.h
+	<stdarg.h>
 	<stdarg.h>
 
 1687626282 source:c:\users\usuário\documents\tp1\controladoras.cpp
@@ -338,46 +370,49 @@
 1687828101 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.cpp
 	"acessoDB.h"
 
-1687828840 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.h
+1687894571 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.cpp
+	"acessoDB.h"
+
+1687893584 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
 	"sqlite3.h"
 	<iostream>
-	<curses.h>
+	<conio.h>
 	<string>
 	<stdio.h>
 
-1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.h
+1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\dominios.h
 	<string>
 	<iostream>
 	<unordered_set>
 	<stdexcept>
 	<regex>
 
-1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Entidades.h
+1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\entidades.h
 	"Dominios.h"
 
-1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/sqlite3.h
+1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\sqlite3.h
 	<stdarg.h>
 
-1687828890 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.cpp
+1687894135 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
 	"acessoDB.h"
 
-1687875037 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Controladoras.h
+1687894068 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.h
 	"Interfaces.h"
 
-1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Interfaces.h
+1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
-1687828327 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Dominios.cpp
+1687821507 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\dominios.cpp
 	"Dominios.h"
 
-1687829002 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/main.cpp
+1687821507 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -385,10 +420,10 @@
 	"Interfaces.h"
 	"Controladoras.h"
 
-1687828101 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.cpp
+1687821507 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\testes.cpp
 	"Testes.h"
 
-1687828101 /home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/Testes.h
+1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\testes.h
 	"Dominios.h"
 	"Entidades.h"
 

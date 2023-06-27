@@ -179,7 +179,7 @@ void CntrIADesenvolvedor::cadastrar() {
     char texto8[] = "Falha ao realizar o cadastramento. Pressione qualquer tecla para continuar.";
     char texto9[] = "Desenvolvedor ja cadastrado anteriormente. Pressione qualquer tecla para continuar.";
 
-    char campo1[80], campo2[80], campo3[80], campo4[80];
+    string campo1, campo2, campo3, campo4;
 
     Texto nome;
     Matricula matricula;
@@ -190,13 +190,13 @@ void CntrIADesenvolvedor::cadastrar() {
 
     cout << texto1 << endl;
     cout << texto2 << " ";
-    cin >> campo1;
+    getline(cin, campo1);
     cout << texto3 << " ";
-    cin >> campo2;
+    getline(cin, campo2);
     cout << texto4 << " ";
-    cin >> campo3;
+    getline(cin, campo3);
     cout << texto5 << " ";
-    cin >> campo4;
+    getline(cin, campo4);
 
     try{
         nome.setValor(string(campo1));
@@ -215,6 +215,14 @@ void CntrIADesenvolvedor::cadastrar() {
     desenvolvedor.setMatricula(matricula);
     desenvolvedor.setSenha(senha);
     desenvolvedor.setTelefone(telefone);
+
+    Desenvolvedor existente;
+    existente = cntrISDesenvolvedor->visualizar(matricula);
+    if (existente.getMatricula().getValor() == desenvolvedor.getMatricula().getValor()) {
+        cout << texto9 << endl;
+        getch();
+        return;
+    }
 
     if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
         cout << texto7 << endl;
@@ -271,9 +279,10 @@ void CntrIADesenvolvedor::editar(Matricula matricula) {
     char texto10[] = "Dados atualizados com sucesso.";
     char texto11[] = "Falha ao editar dados.";
     char texto12[] = "Digite qualquer tecla para retornar.";
+    char texto13[] = "------------------------------------";
 
     int campo;
-    char campo1[80], campo2[80], campo3[80];
+    string campo1, campo2, campo3;
     bool apresentar = true;
 
     while(apresentar) {
@@ -285,13 +294,14 @@ void CntrIADesenvolvedor::editar(Matricula matricula) {
             cout << texto3 << desenvolvedor.getMatricula().getValor() << endl;
             cout << texto4 << desenvolvedor.getSenha().getValor() << endl;
             cout << texto5 << desenvolvedor.getTelefone().getValor() << endl;
+            cout << texto13 << endl;
             cout << texto6 << endl;
             cout << texto2 << "";
-            cin >> campo1;
+            getline(cin, campo1);
             cout << texto4 << "";
-            cin >> campo2;
+            getline(cin, campo2);
             cout << texto5 << "";
-            cin >> campo3;
+            getline(cin, campo3);
 
             nome.setValor(campo1);
             senha.setValor(campo2);
@@ -478,7 +488,7 @@ void CntrIATeste::cadastrar(Matricula matricula) {
     char texto6[] = "Erro ao cadastrar teste. Digite algo para continuar.";
     char texto7[] = "Formato invalido. Digite algo para continuar.";
 
-    char campo1[80], campo2[80], campo3[80];
+    string campo1, campo2, campo3;
 
     Codigo codigo;
     Texto nome;
@@ -488,11 +498,11 @@ void CntrIATeste::cadastrar(Matricula matricula) {
 
     cout << texto1 << endl;
     cout << texto2 << " ";
-    cin >> campo1;
+    getline(cin, campo1);
     cout << texto3 << " ";
-    cin >> campo2;
+    getline(cin, campo2);
     cout << texto4 << " ";
-    cin >> campo3;
+    getline(cin, campo3);
 
     try {
         codigo.setValor(string(campo1));
