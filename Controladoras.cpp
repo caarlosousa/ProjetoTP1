@@ -430,7 +430,48 @@ list<CasoDeTeste> CntrISDesenvolvedor::visualizarCasosDeTestes(Matricula matricu
     pesquisarCasosDeTestes.executar();
     return pesquisarCasosDeTestes.getResultado();
 }
+//SERVICO TESTE--------------------------------------------------------
+bool CntrISTeste::cadastrar(const Teste &teste) {
+    ComandoCadastrarTeste cadastrarTeste(teste);
+    return cadastrarTeste.executar();
+}
 
+Teste CntrISTeste::visualizar(const Codigo &codigo) {
+    ComandoPesquisarTeste pesquisarTeste(codigo);
+    pesquisarTeste.executar();
+    Teste teste;
+    teste = pesquisarTeste.getResultado();
+
+    return teste;
+}
+
+bool CntrISTeste::editar(const Teste &teste) {
+    ComandoAtualizarTeste atualizarTeste(teste);
+    return atualizarTeste.executar();
+}
+
+bool CntrISTeste::descadastrar(const Codigo &codigo) {
+    list<CasoDeTeste> casosDeTestes = visualizarCasosDeTestes(codigo);
+    CasoDeTeste casoDeTeste;
+    Codigo codigoCaso;
+
+    while (!casosDeTestes.empty()){
+        casoDeTeste = casosDeTestes.back();
+        casosDeTestes.pop_back();
+        codigoCaso = casoDeTeste.getCodigo();
+        ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigoCaso);
+        deletarCasoDeTeste.executar();
+    }
+
+    ComandoDeletarTeste deletarTeste(codigo);
+    return deletarTeste.executar();
+}
+
+list<CasoDeTeste> CntrISTeste::visualizarCasosDeTestes(Codigo codigoT) {
+    ComandoPesquisarCasosDeTestes pesquisarCasosDeTestes(codigoT);
+    pesquisarCasosDeTestes.executar();
+    return pesquisarCasosDeTestes.getResultado();
+}
 // APRESENTACAO TESTE
 void CntrIATeste::executar(Matricula matricula) {
 

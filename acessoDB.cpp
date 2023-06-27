@@ -312,6 +312,12 @@ ComandoPesquisarCasosDeTestes::ComandoPesquisarCasosDeTestes(Matricula matricula
     comandoSQL += "')";
 }
 
+ComandoPesquisarCasosDeTestes::ComandoPesquisarCasosDeTestes(Codigo codigo){
+    comandoSQL = "SELECT * FROM caso_de_teste WHERE codigoteste = '";
+    comandoSQL += codigo.getValor();
+    comandoSQL += "')";
+}
+
 list<CasoDeTeste> ComandoPesquisarCasosDeTestes::getResultado() {
     ElementoResultado resultado;
     list<CasoDeTeste> casosDeTestes;
