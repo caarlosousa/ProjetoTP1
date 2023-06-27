@@ -22,7 +22,7 @@ class ISDesenvolvedor {
 class ISTeste {
     public:
         virtual bool cadastrar(const Teste&) = 0;
-        virtual Teste visualizar(const Teste&) = 0;
+        virtual Teste visualizar(const Codigo&) = 0;
         virtual bool editar(const Teste&) = 0;
         virtual bool descadastrar(const Codigo&) = 0;
         virtual ~ISTeste(){}

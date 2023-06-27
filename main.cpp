@@ -11,28 +11,28 @@ int main(){
     CntrAControle *cntrAControle;
     IAAutenticacao *cntrAAutenticacao;
     IADesenvolvedor *cntrADesenvolvedor;
-    //IATeste *cntrATeste;
+    IATeste *cntrATeste;
 
     cntrAControle = new CntrAControle();
     cntrAAutenticacao = new CntrIAAutenticacao();
     cntrADesenvolvedor = new CntrIADesenvolvedor();
-    //cntrATeste = new CntrIATeste();
+    cntrATeste = new CntrIATeste();
 
     ISAutenticacao *cntrISAutenticacao;
     ISDesenvolvedor *cntrISDesenvolvedor;
-    //ISTeste *cntrISTeste;
+    ISTeste *cntrISTeste;
 
     cntrISAutenticacao = new CntrISAutenticacao();
     cntrISDesenvolvedor = new CntrISDesenvolvedor();
-    //cntrISTeste = new CntrISTeste();
+    cntrISTeste = new CntrISTeste();
 
     cntrAControle->setCntrAAutenticacao(cntrAAutenticacao);
     cntrAControle->setCntrADesenvolvedor(cntrADesenvolvedor);
-    //cntrAControle->setCntrATeste(cntrATeste);
+    cntrAControle->setCntrATeste(cntrATeste);
 
     cntrAAutenticacao->setCntrISAutenticacao(cntrISAutenticacao);
     cntrADesenvolvedor->setCntrISDesenvolvedor(cntrISDesenvolvedor);
-    //cntrATeste->setCntrISTeste(cntrISTeste);
+    cntrATeste->setCntrISTeste(cntrISTeste);
 
     cntrAControle->executar();
 

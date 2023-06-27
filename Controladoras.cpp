@@ -576,30 +576,114 @@ void CntrIATeste::visualizar(Matricula matricula) {
 
 void CntrIATeste::editar(Matricula matricula) {
 
+    Codigo codigo;
+    Texto nome;
+    Classe classe;
+    Teste teste;
+
+    char texto1[] = "Insira o codigo do teste que deseja editar: ";
+    char texto2[] = "Aqui estao os dados atuais do seu teste: ";
+    char texto3[] = "Codigo: ";
+    char texto4[] = "Nome: ";
+    char texto5[] = "Classe: ";
+    char texto6[] = "------------------------------------";
+    char texto7[] = "Insira os novos dados do seu teste: ";
+    char texto8[] = "Dados invalidos. Tente novamente.";
+    char texto9[] = "1 - Inserir novamente.";
+    char texto10[] = "2 - Retornar.";
+    char texto11[] = "Teste atualizado com sucesso.";
+    char texto12[] = "Falha ao editar teste.";
+    char texto13[] = "Digite qualquer tecla para retornar.";
+
+    int campo;
+    string campoCodigo, campo1, campo2;
+    bool apresentar = true;
+
+    CLR_SCR;
+
+    cout << texto1;
+    getline(cin, campoCodigo);
+
+    try {
+        codigo.setValor(campoCodigo);
+        teste = cntrISTeste->visualizar(codigo);
+    }
+    catch(invalid_argument &excecao) {
+        cout << texto8 << endl;
+        getch();
+        return;
+    }
+
+    while(apresentar) {
+        try {
+            CLR_SCR;
+
+            cout << texto2 << endl;
+            cout << texto3 << teste.getCodigo().getValor() << endl;
+            cout << texto4 << teste.getNome().getValor() << endl;
+            cout << texto5 << teste.getClasse().getValor() << endl;
+            cout << texto6 << endl;
+            cout << texto7 << endl;
+
+            cout << texto4;
+            cin.ignore();
+            getline(cin, campo1);
+
+            cout << texto5;
+            getline(cin, campo2);
+
+            nome.setValor(campo1);
+            classe.setValor(campo2);
+            teste.setNome(nome);
+            teste.setClasse(classe);
+
+            apresentar = false;
+        }
+        catch(invalid_argument &excecao) {
+            cout << texto8 << endl;
+            cout << texto9 << endl;
+            cout << texto10 << endl;
+            campo = getch() - 48;
+            if (campo == 2) {
+                return;
+            }
+            getch();
+        }
+    }
+    if (cntrISTeste->editar(teste)) {
+        cout << texto10 << endl;
+    } else {
+        cout << texto11 << endl;
+    }
+    cout << texto12 << endl;
+    getch();
 }
 
 bool CntrIATeste::descadastrar(Matricula matricula) {
 
-   /* char texto1[] = "Insira o codigo do teste que deseja descadastrar: ";
+    char texto1[] = "Insira o codigo do teste que deseja descadastrar: ";
     char texto2[] = "Tem certeza que deseja descadastrar Teste?";
     char texto3[] = "1 - Sim.";
     char texto4[] = "2 - Nao.";
     char texto5[] = "Falha na exclusao. Tente novamente.";
     char texto6[] = "Descadastramento cancelado.";
     char texto7[] = "Descadastramento realizado com sucesso";
+    char texto8[] = "Formato invalido. Pressione qualquer tecla para continaur.";
 
     int campo;
     string campoCodigo;
     Codigo codigo;
 
-    cout << texto1 << endl;
+    CLR_SCR;
+
+    cout << texto1;
     getline(cin, campoCodigo);
 
     try {
         codigo.setValor(campoCodigo);
     }
     catch(invalid_argument &excecao) {
-        cout << "Teste nao encontrado. Pressione qualquer tecla para continaur." << endl;
+        cout << texto8 << endl;
         getch();
         return false;
     }
@@ -626,6 +710,6 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
             cout << texto6 << endl;
             getch();
             return false;
-    }*/
+    }
     return false;
 }
