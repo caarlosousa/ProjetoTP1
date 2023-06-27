@@ -91,6 +91,8 @@ class CntrISDesenvolvedor: public ISDesenvolvedor {
 };
 
 class CntrISTeste: public ISTeste {
+    private:
+        list<CasoDeTeste> visualizarCasosDeTestes(Codigo);
     public:
         bool cadastrar(const Teste&);
         Teste visualizar(const Codigo&);

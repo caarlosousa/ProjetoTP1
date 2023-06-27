@@ -370,7 +370,7 @@
 1687828101 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.cpp
 	"acessoDB.h"
 
-1687894571 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.cpp
+1687901123 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.cpp
 	"acessoDB.h"
 
 1687893584 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.h
@@ -396,16 +396,16 @@
 1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\sqlite3.h
 	<stdarg.h>
 
-1687900799 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.cpp
+1687901123 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
 	"acessoDB.h"
 
-1687898757 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.h
+1687901123 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.h
 	"Interfaces.h"
 
-1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\interfaces.h
+1687901123 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
@@ -424,6 +424,63 @@
 	"Testes.h"
 
 1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\testes.h
+	"Dominios.h"
+	"Entidades.h"
+
+1687898144 source:c:\users\daviv\onedrive\documentos\projetotp1\acessodb.cpp
+	"acessoDB.h"
+
+1687895395 c:\users\daviv\onedrive\documentos\projetotp1\acessodb.h
+	"Dominios.h"
+	"Entidades.h"
+	<list>
+	"sqlite3.h"
+	<iostream>
+	<conio.h>
+	<string>
+	<stdio.h>
+
+1687895395 c:\users\daviv\onedrive\documentos\projetotp1\dominios.h
+	<string>
+	<iostream>
+	<unordered_set>
+	<stdexcept>
+	<regex>
+
+1687895395 c:\users\daviv\onedrive\documentos\projetotp1\entidades.h
+	"Dominios.h"
+
+1687895395 c:\users\daviv\onedrive\documentos\projetotp1\sqlite3.h
+	<stdarg.h>
+
+1687898588 source:c:\users\daviv\onedrive\documentos\projetotp1\controladoras.cpp
+	"Controladoras.h"
+	"Dominios.h"
+	"Entidades.h"
+	"acessoDB.h"
+
+1687898377 c:\users\daviv\onedrive\documentos\projetotp1\controladoras.h
+	"Interfaces.h"
+
+1687898262 c:\users\daviv\onedrive\documentos\projetotp1\interfaces.h
+	"acessoDB.h"
+	<stdexcept>
+
+1687895395 source:c:\users\daviv\onedrive\documentos\projetotp1\dominios.cpp
+	"Dominios.h"
+
+1687895395 source:c:\users\daviv\onedrive\documentos\projetotp1\main.cpp
+	<iostream>
+	<string>
+	"Dominios.h"
+	"Entidades.h"
+	"Interfaces.h"
+	"Controladoras.h"
+
+1687895395 source:c:\users\daviv\onedrive\documentos\projetotp1\testes.cpp
+	"Testes.h"
+
+1687895395 c:\users\daviv\onedrive\documentos\projetotp1\testes.h
 	"Dominios.h"
 	"Entidades.h"
 
