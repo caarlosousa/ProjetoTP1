@@ -177,6 +177,7 @@ void CntrIADesenvolvedor::cadastrar() {
     char texto6[] = "Dados em formato invalido. Pressione qualquer tecla para continuar.";
     char texto7[] = "Desenvolvedor cadastrado com sucesso. Pressione qualquer tecla para continuar.";
     char texto8[] = "Falha ao realizar o cadastramento. Pressione qualquer tecla para continuar.";
+    char texto9[] = "Desenvolvedor ja cadastrado anteriormente. Pressione qualquer tecla para continuar.";
 
     char campo1[80], campo2[80], campo3[80], campo4[80];
 
@@ -214,6 +215,15 @@ void CntrIADesenvolvedor::cadastrar() {
     desenvolvedor.setMatricula(matricula);
     desenvolvedor.setSenha(senha);
     desenvolvedor.setTelefone(telefone);
+
+    Desenvolvedor existente;
+    existente = cntrISDesenvolvedor->visualizar(matricula);
+
+    if(existente.getMatricula().getValor() == matricula) {
+        cout << texto9 << endl;
+        getch();
+        return;
+    }
 
     if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
         cout << texto7 << endl;
@@ -471,7 +481,55 @@ void CntrIATeste::executar(Matricula matricula) {
 void CntrIATeste::cadastrar(Matricula matricula) {
 
     char texto1[] = "Insira os dados do seu teste: ";
-    char texto2[] = ""
+    char texto2[] = "Codigo:";
+    char texto3[] = "Nome:";
+    char texto4[] = "Classe:";
+    char texto5[] = "Teste cadastrado com sucesso. Digite algo para continuar.";
+    char texto6[] = "Erro ao cadastrar teste. Digite algo para continuar.";
+    char texto7[] = "Formato invalido. Digite algo para continuar.";
+
+    char campo1[80], campo2[80], campo3[80];
+
+    Codigo codigo;
+    Texto nome;
+    Classe classe;
+
+    CLR_SCR;
+
+    cout << texto1 << endl;
+    cout << texto2 << " ";
+    cin >> campo1;
+    cout << texto3 << " ";
+    cin >> campo2;
+    cout << texto4 << " ";
+    cin >> campo3;
+
+    try {
+        codigo.setValor(string(campo1));
+        nome.setValor(string(campo2));
+        classe.setValor(string(campo3));
+    }
+    catch(invalid_argument &excecao) {
+        cout << texto7 << endl;
+        getch();
+        return;
+    }
+
+    Teste teste;
+    teste.setCodigo(codigo);
+    teste.setNome(nome);
+    teste.setClasse(classe);
+
+    if(cntrISTeste->cadastrar(teste)) {
+        cout << texto5 << endl;
+        getch();
+        return;
+    }
+
+    cout << texto6 << endl;
+    getch();
+
+    return;
 }
 
 void CntrIATeste::visualizar(Matricula matricula) {
