@@ -380,7 +380,7 @@ bool CntrISDesenvolvedor::editar(const Desenvolvedor &desenvolvedor) {
     return atualizarDesenvolvedor.executar();
 }
 
-bool CntrISDesenvolvedor::descadastrar(const Matricula &matricula) { // depois tu da uma olhada aqui, esse comandoDeletarProposta nao existe, e o argumento � o desenvolvedor, n�o a matricula
+bool CntrISDesenvolvedor::descadastrar(const Matricula &matricula) {
     list<Teste> testes = visualizarTestes(matricula);
     Teste teste;
     Codigo codigoTeste;
@@ -423,7 +423,7 @@ list<CasoDeTeste> CntrISDesenvolvedor::visualizarCasosDeTestes(Matricula matricu
 // APRESENTACAO TESTE
 void CntrIATeste::executar(Matricula matricula) {
 
-    char texto1[] = "Selecione um dos servi�os: ";
+    char texto1[] = "Selecione um dos servicos: ";
     char texto2[] = "1 - Visualizar Teste.";
     char texto3[] = "2 - Cadastrar teste.";
     char texto4[] = "3 - Editar teste.";
@@ -441,23 +441,40 @@ void CntrIATeste::executar(Matricula matricula) {
         cout << texto1 << endl;
         cout << texto2 << endl;
         cout << texto3 << endl;
-        cout << texto4 << endl;
+        cout << texto4 << endl;TESTE
+                    break;
         cout << texto5 << endl;
         cout << texto6 << endl;
 
         campo = getch() - 48;
 
         switch(campo) {
-            case 1: // VISUALIZAR TESTE
+            case 1:
+                    visualizar(matricula);
                     break;
-            case 2: // CADASTRAR TESTE
+            case 2:
+                    cadastrar(matricula);
                     break;
-            case 3: // EDITAR TESTE
+            case 3:
+                    editar(matricula);
                     break;
-            case 4: // DESCADASTRAR TESTE
+            case 4:
+                    descadastrar(matricula);
                     break;
-            case 5: apresentar = false;
+            case 5:
+                    apresentar = false;
                     break;
         }
     }
+}
+
+void CntrIATeste::cadastrar(Matricula matricula) {
+
+    char texto1[] = "Insira os dados do seu teste: ";
+    char texto2[] = ""
+}
+
+void CntrIATeste::visualizar(Matricula matricula) {
+
+
 }

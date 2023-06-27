@@ -6,7 +6,7 @@
 #include <list>
 #include "sqlite3.h"
 #include <iostream>
-#include <conio.h> // LEMBRAR DE MUDAR PRA CONIO.H
+#include <curses.h> // LEMBRAR DE MUDAR PRA CONIO.H
 #include <string>
 #include <stdio.h>
 
