@@ -216,15 +216,6 @@ void CntrIADesenvolvedor::cadastrar() {
     desenvolvedor.setSenha(senha);
     desenvolvedor.setTelefone(telefone);
 
-    Desenvolvedor existente;
-    existente = cntrISDesenvolvedor->visualizar(matricula);
-
-    if(existente.getMatricula().getValor() == desenvolvedor.getMatricula().getValor()) {
-        cout << texto9 << endl;
-        getch();
-        return;
-    }
-
     if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
         cout << texto7 << endl;
         getch();
