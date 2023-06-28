@@ -590,18 +590,17 @@ void CntrIATeste::visualizar(Matricula matricula) {
     try {
         codigo.setValor(campo);
         teste = cntrISTeste->visualizar(codigo);
+        cout << texto2 << teste.getCodigo().getValor() << endl;
+        cout << texto3 << teste.getNome().getValor() << endl;
+        cout << texto4 << teste.getClasse().getValor() << endl;
+        cout << texto5 << endl;
+        getch();
     }
-    catch (invalid_argument &excecao) {
+    catch (...) {
         cout << texto6 << endl;
         getch();
         return;
     }
-
-    cout << texto2 << teste.getCodigo().getValor() << endl;
-    cout << texto3 << teste.getNome().getValor() << endl;
-    cout << texto4 << teste.getClasse().getValor() << endl;
-    cout << texto5 << endl;
-    getch();
 }
 
 void CntrIATeste::editar(Matricula matricula) {
@@ -637,7 +636,7 @@ void CntrIATeste::editar(Matricula matricula) {
         codigo.setValor(campoCodigo);
         teste = cntrISTeste->visualizar(codigo);
     }
-    catch(invalid_argument &excecao) {
+    catch(...) {
         cout << texto8 << endl;
         getch();
         return;
