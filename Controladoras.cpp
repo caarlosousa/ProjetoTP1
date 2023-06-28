@@ -92,9 +92,9 @@ bool CntrIAAutenticacao::autenticar(Matricula *matricula) {
         CLR_SCR;
 
         cout << texto1 << " ";
-        cin >> campo1;
+        getline(cin, campo1);
         cout << texto2 << " ";
-        cin >> campo2;
+        getline(cin, campo2);
 
         try {
             matricula->setValor(campo1);
@@ -290,7 +290,6 @@ void CntrIADesenvolvedor::editar(Matricula matricula) {
             cout << texto6 << endl;
 
             cout << texto2;
-            cin.ignore();
             getline(cin, campo1);
 
             cout << texto4;
@@ -556,6 +555,7 @@ void CntrIATeste::cadastrar(Matricula matricula) {
     teste.setCodigo(codigo);
     teste.setNome(nome);
     teste.setClasse(classe);
+    teste.setMatricula(matricula);
 
     if(cntrISTeste->cadastrar(teste)) {
         cout << texto5 << endl;
@@ -571,7 +571,37 @@ void CntrIATeste::cadastrar(Matricula matricula) {
 
 void CntrIATeste::visualizar(Matricula matricula) {
 
+    CLR_SCR;
 
+    char texto1[] = "Digite o codigo do teste que deseja visualizar: ";
+    char texto2[] = "Codigo: ";
+    char texto3[] = "Nome: ";
+    char texto4[] = "Classe: ";
+    char texto5[] = "Digite qualquer tecla para continuar.";
+    char texto6[] = "Formato invalido. Tente novamente.";
+
+    string campo;
+    Codigo codigo;
+    Teste teste;
+
+    cout << texto1;
+    getline(cin, campo);
+
+    try {
+        codigo.setValor(campo);
+        teste = cntrISTeste->visualizar(codigo);
+    }
+    catch (invalid_argument &excecao) {
+        cout << texto6 << endl;
+        getch();
+        return;
+    }
+
+    cout << texto2 << teste.getCodigo().getValor() << endl;
+    cout << texto3 << teste.getNome().getValor() << endl;
+    cout << texto4 << teste.getClasse().getValor() << endl;
+    cout << texto5 << endl;
+    getch();
 }
 
 void CntrIATeste::editar(Matricula matricula) {
@@ -593,7 +623,6 @@ void CntrIATeste::editar(Matricula matricula) {
     char texto10[] = "2 - Retornar.";
     char texto11[] = "Teste atualizado com sucesso.";
     char texto12[] = "Falha ao editar teste.";
-    char texto13[] = "Digite qualquer tecla para retornar.";
 
     int campo;
     string campoCodigo, campo1, campo2;
@@ -651,9 +680,9 @@ void CntrIATeste::editar(Matricula matricula) {
         }
     }
     if (cntrISTeste->editar(teste)) {
-        cout << texto10 << endl;
-    } else {
         cout << texto11 << endl;
+    } else {
+        cout << texto12 << endl;
     }
     cout << texto12 << endl;
     getch();
@@ -700,6 +729,7 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
         case 1:
             if (cntrISTeste->descadastrar(codigo)) {
                 cout << texto7 << endl;
+                getch();
                 return true;
             } else {
                 cout << texto5 << endl;
