@@ -912,10 +912,10 @@ bool CntrISCasoDeTeste::cadastrar(const CasoDeTeste &casoDeTeste) {
 CasoDeTeste CntrISCasoDeTeste::visualizar(const Codigo &codigo) {
     ComandoPesquisarCasosDeTeste pesquisarCasoDeTeste(codigo);
     pesquisarTeste.executar();
-    Teste teste;
-    teste = pesquisarTeste.getResultado();
+    CasoDeTeste casoDeTeste;
+    casoDeTeste = pesquisarTeste.getResultado();
 
-    return teste;
+    return casoDeTeste;
 }
 
 bool CntrISCasoDeTeste::editar(const CasoDeTeste &casoDeTeste) {
