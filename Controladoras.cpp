@@ -1022,7 +1022,7 @@ void CntrIACasoDeTeste::editar(Matricula matricula) {
     getch();
 }
 
-void CntrIATeste::descadastrar(Matricula matricula) {
+bool CntrIACasoDeTeste::descadastrar(Matricula matricula) {
 
     char texto1[] = "Insira o codigo do caso de teste que deseja descadastrar: ";
     char texto2[] = "Tem certeza que deseja descadastrar Caso de teste?";
