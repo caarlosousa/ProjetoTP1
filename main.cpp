@@ -12,33 +12,33 @@ int main(){
     IAAutenticacao *cntrAAutenticacao;
     IADesenvolvedor *cntrADesenvolvedor;
     IATeste *cntrATeste;
-    IACasoDeTeste *cntrACasoDeTeste;
+    //IACasoDeTeste *cntrACasoDeTeste;
 
     cntrAControle = new CntrAControle();
     cntrAAutenticacao = new CntrIAAutenticacao();
     cntrADesenvolvedor = new CntrIADesenvolvedor();
     cntrATeste = new CntrIATeste();
-    cntrACasoDeTeste = new CntrIACasoDeTeste();
+    //cntrACasoDeTeste = new CntrIACasoDeTeste();
 
     ISAutenticacao *cntrISAutenticacao;
     ISDesenvolvedor *cntrISDesenvolvedor;
     ISTeste *cntrISTeste;
-    ISCasoDeTeste *cntrISCasoDeTeste;
+    //ISCasoDeTeste *cntrISCasoDeTeste;
 
     cntrISAutenticacao = new CntrISAutenticacao();
     cntrISDesenvolvedor = new CntrISDesenvolvedor();
     cntrISTeste = new CntrISTeste();
-    cntrISCasoDeTeste = new CntrIACasoDeTeste();
+    //cntrISCasoDeTeste = new CntrIACasoDeTeste();
 
     cntrAControle->setCntrAAutenticacao(cntrAAutenticacao);
     cntrAControle->setCntrADesenvolvedor(cntrADesenvolvedor);
     cntrAControle->setCntrATeste(cntrATeste);
-    cntrAControle->setCntrACasoDeTeste(cntrACasoDeTeste);
+    //cntrAControle->setCntrACasoDeTeste(cntrACasoDeTeste);
 
     cntrAAutenticacao->setCntrISAutenticacao(cntrISAutenticacao);
     cntrADesenvolvedor->setCntrISDesenvolvedor(cntrISDesenvolvedor);
     cntrATeste->setCntrISTeste(cntrISTeste);
-    cntrACasoDeTeste->setCntrISCasoDeTeste(cntrISCasoDeTeste);
+    //cntrACasoDeTeste->setCntrISCasoDeTeste(cntrISCasoDeTeste);
 
     cntrAControle->executar();
 

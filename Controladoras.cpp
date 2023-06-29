@@ -803,8 +803,9 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     char texto8[] = "Caso de teste cadastrado com sucesso. Digite algo para continuar.";
     char texto9[] = "Erro ao cadastrar caso de teste. Digite algo para continuar.";
     char texto10[] = "Formato invalido. Digite algo para continuar.";
+    char texto11[] = "Código correspondente ao teste: ";
 
-    string campo1, campo2, campo3, campo4, campo5, campo6;
+    string campo1, campo2, campo3, campo4, campo5, campo6, campo7;
 
     Codigo codigo;
     Texto nome;
@@ -812,6 +813,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     Texto acao;
     Texto resposta;
     Resultado resultado;
+    Codigo casoDeTeste;
 
     CLR_SCR;
 
@@ -828,6 +830,8 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     getline(cin, campo5);
     cout << texto7 << " ";
     getline(cin, campo6);
+    cout << texto11 << " ";
+    getline(cin, campo7);
 
     try {
         codigo.setValor(string(campo1));
@@ -836,6 +840,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
         acao.setValor(string(campo4));
         resposta.setValor(string(campo5));
         resultado.setValor(string(campo6));
+        casoDeTeste.setValor(string(campo7));
     }
     catch(invalid_argument &excecao) {
         cout << texto10 << endl;
@@ -850,9 +855,9 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     caso_de_teste.setAcao(acao);
     caso_de_teste.setResposta(resposta);
     caso_de_teste.setResultado(resultado);
-    caso_de_teste.setMatricula(matricula);
+    caso_de_teste.setCodigoTeste(casoDeTeste);
 
-    if(CntrISCasoDeTeste->cadastrar(caso_de_teste)) {
+    if(cntrISCasoDeTeste->cadastrar(caso_de_teste)) {
         cout << texto8 << endl;
         getch();
         return;
@@ -877,6 +882,7 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
     char texto7[] = "Resultado:";
     char texto8[] = "Digite qualquer tecla para continuar.";
     char texto9[] = "Formato invalido. Tente novamente.";
+    char texto10[] = "Código do teste correspondente: "
 
     string campo;
     Codigo codigo;
@@ -894,6 +900,7 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
         cout << texto5 << caso_de_teste.getAcao().getValor() << endl;
         cout << texto6 << caso_de_teste.getResposta().getValor() << endl;
         cout << texto7 << caso_de_teste.getResultado().getValor() << endl;
+        cout << texto10 << caso_de_teste.getCodigoTeste().getValor() << endl;
         cout << texto8 << endl;
         getch();
     }
@@ -903,7 +910,14 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
         return;
     }
 }
-//SERVICO TESTE--------------------------------------------------------
+
+void CntrIACasoDeTeste::editar(Matricula matricula) {
+}
+
+void CntrIATeste::descadastrar(Matricula matricula) {
+}
+
+// SERVICO CASO DE TESTE
 bool CntrISCasoDeTeste::cadastrar(const CasoDeTeste &casoDeTeste) {
     ComandoCadastrarCasoDeTeste cadastrarCasoDeTeste(casoDeTeste);
     return cadastrarCasoDeTeste.executar();
@@ -923,9 +937,8 @@ bool CntrISCasoDeTeste::editar(const CasoDeTeste &casoDeTeste) {
     return atualizarCasoDeTeste.executar();
 }
 
-bool CntrISTeste::descadastrar(const Codigo &codigo) {
+bool CntrISCasoDeTeste::descadastrar(const Codigo &codigo) {
     ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigo);
     return deletarCasoDeTeste.executar();
 }
 
-// SERVICO CASO DE TESTE

@@ -487,7 +487,7 @@
 1687905910 source:c:\users\usuário\documents\projetotp1-master\acessodb.cpp
 	"acessoDB.h"
 
-1687905910 c:\users\usuário\documents\projetotp1-master\acessodb.h
+1688047346 c:\users\usuário\documents\projetotp1-master\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -522,4 +522,19 @@
 
 1688043623 source:c:\users\daviv\projetotp1\acessodb.cpp
 	"acessoDB.h"
+
+1688048322 source:c:\users\usuário\documents\projetotp1-master\main.cpp
+	<iostream>
+	<string>
+	"Dominios.h"
+	"Entidades.h"
+	"Interfaces.h"
+	"Controladoras.h"
+
+1688047346 c:\users\usuário\documents\projetotp1-master\interfaces.h
+	"acessoDB.h"
+	<stdexcept>
+
+1688048490 c:\users\usuário\documents\projetotp1-master\controladoras.h
+	"Interfaces.h"
 

@@ -89,7 +89,7 @@ class CntrIACasoDeTeste: public IACasoDeTeste {
         void descadastrar(Matricula);
     public:
         void executar(Matricula);
-        void setCntrISCasoDeTeste(ISTeste*);
+        void setCntrISCasoDeTeste(ISCasoDeTeste*);
 };
 
 void inline CntrIACasoDeTeste::setCntrISCasoDeTeste(ISCasoDeTeste* cntrISCasoDeTeste) {
