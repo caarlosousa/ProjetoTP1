@@ -425,6 +425,7 @@ list<CasoDeTeste> CntrISDesenvolvedor::visualizarCasosDeTestes(Matricula matricu
     pesquisarCasosDeTestes.executar();
     return pesquisarCasosDeTestes.getResultado();
 }
+
 //SERVICO TESTE--------------------------------------------------------
 bool CntrISTeste::cadastrar(const Teste &teste) {
     ComandoCadastrarTeste cadastrarTeste(teste);
@@ -742,3 +743,165 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
     }
     return false;
 }
+
+// APRESENTACAO CASO DE TESTE
+void CntrIACasoDeTeste::executar(Matricula matricula) {
+
+    char texto1[] = "Selecione um dos servicos: ";
+    char texto2[] = "1 - Visualizar Caso de teste.";
+    char texto3[] = "2 - Cadastrar Caso de teste.";
+    char texto4[] = "3 - Editar Caso de teste.";
+    char texto5[] = "4 - Descadastrar Caso de teste.";
+    char texto6[] = "5 - Retornar.";
+
+    int campo;
+
+    bool apresentar = true;
+
+    while(apresentar){
+
+        CLR_SCR;
+
+        cout << texto1 << endl;
+        cout << texto2 << endl;
+        cout << texto3 << endl;
+        cout << texto4 << endl;
+        cout << texto5 << endl;
+        cout << texto6 << endl;
+
+        campo = getch() - 48;
+
+        switch(campo) {
+            case 1:
+                    visualizar(matricula);
+                    break;
+            case 2:
+                    cadastrar(matricula);
+                    break;
+            case 3:
+                    editar(matricula);
+                    break;
+            case 4:
+                    descadastrar(matricula);
+                    break;
+            case 5:
+                    apresentar = false;
+                    break;
+        }
+    }
+}
+
+void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
+
+    char texto1[] = "Insira os dados do seu caso de teste: ";
+    char texto2[] = "Codigo:";
+    char texto3[] = "Nome:";
+    char texto4[] = "Data:";
+    char texto5[] = "Acao:";
+    char texto6[] = "Resposta";
+    char texto7[] = "Resultado:";
+    char texto8[] = "Caso de teste cadastrado com sucesso. Digite algo para continuar.";
+    char texto9[] = "Erro ao cadastrar caso de teste. Digite algo para continuar.";
+    char texto10[] = "Formato invalido. Digite algo para continuar.";
+
+    string campo1, campo2, campo3, campo4, campo5, campo6;
+
+    Codigo codigo;
+    Texto nome;
+    Data data;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado;
+
+    CLR_SCR;
+
+    cout << texto1 << endl;
+    cout << texto2 << " ";
+    getline(cin, campo1);
+    cout << texto3 << " ";
+    getline(cin, campo2);
+    cout << texto4 << " ";
+    getline(cin, campo3);
+    cout << texto5 << " ";
+    getline(cin, campo4);
+    cout << texto6 << " ";
+    getline(cin, campo5);
+    cout << texto7 << " ";
+    getline(cin, campo6);
+
+    try {
+        codigo.setValor(string(campo1));
+        nome.setValor(string(campo2));
+        data.setValor(string(campo3));
+        acao.setValor(string(campo4));
+        resposta.setValor(string(campo5));
+        resultado.setValor(string(campo6));
+    }
+    catch(invalid_argument &excecao) {
+        cout << texto10 << endl;
+        getch();
+        return;
+    }
+
+    CasoDeTeste caso_de_teste;
+    caso_de_teste.setCodigo(codigo);
+    caso_de_teste.setNome(nome);
+    caso_de_teste.setData(data);
+    caso_de_teste.setAcao(acao);
+    caso_de_teste.setResposta(resposta);
+    caso_de_teste.setResultado(resultado);
+    caso_de_teste.setMatricula(matricula);
+
+    if(CntrISCasoDeTeste->cadastrar(caso_de_teste)) {
+        cout << texto8 << endl;
+        getch();
+        return;
+    }
+
+    cout << texto9 << endl;
+    getch();
+
+    return;
+}
+
+void CntrIACasoDeTeste::visualizar(Matricula matricula) {
+
+    CLR_SCR;
+
+    char texto1[] = "Digite o codigo do caso de teste que deseja visualizar: ";
+    char texto2[] = "Codigo:";
+    char texto3[] = "Nome:";
+    char texto4[] = "Data:";
+    char texto5[] = "Acao:";
+    char texto6[] = "Resposta";
+    char texto7[] = "Resultado:";
+    char texto8[] = "Digite qualquer tecla para continuar.";
+    char texto9[] = "Formato invalido. Tente novamente.";
+
+    string campo;
+    Codigo codigo;
+    CasoDeTeste caso_de_teste;
+
+    cout << texto1;
+    getline(cin, campo);
+
+    try {
+        codigo.setValor(campo);
+        caso_de_teste = cntrISCasoDeTeste->visualizar(codigo);
+        cout << texto2 << caso_de_teste.getCodigo().getValor() << endl;
+        cout << texto3 << caso_de_teste.getNome().getValor() << endl;
+        cout << texto4 << caso_de_teste.getData().getValor() << endl;
+        cout << texto5 << caso_de_teste.getAcao().getValor() << endl;
+        cout << texto6 << caso_de_teste.getResposta().getValor() << endl;
+        cout << texto7 << caso_de_teste.getResultado().getValor() << endl;
+        cout << texto8 << endl;
+        getch();
+    }
+    catch (...) {
+        cout << texto9 << endl;
+        getch();
+        return;
+    }
+}
+
+// SERVICO CASO DE TESTE

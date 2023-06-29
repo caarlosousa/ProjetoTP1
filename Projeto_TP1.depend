@@ -484,3 +484,39 @@
 	"Dominios.h"
 	"Entidades.h"
 
+1687905910 source:c:\users\usuário\documents\projetotp1-master\acessodb.cpp
+	"acessoDB.h"
+
+1687905910 c:\users\usuário\documents\projetotp1-master\acessodb.h
+	"Dominios.h"
+	"Entidades.h"
+	<list>
+	"sqlite3.h"
+	<iostream>
+	<conio.h>
+	<string>
+	<stdio.h>
+
+1687797953 c:\users\usuário\documents\projetotp1-master\dominios.h
+	<string>
+	<iostream>
+	<unordered_set>
+	<stdexcept>
+	<regex>
+
+1687797953 c:\users\usuário\documents\projetotp1-master\entidades.h
+	"Dominios.h"
+
+1687797953 c:\users\usuário\documents\projetotp1-master\sqlite3.h
+	<stdarg.h>
+
+1687797953 source:c:\users\usuário\documents\projetotp1-master\dominios.cpp
+	"Dominios.h"
+
+1687797953 source:c:\users\usuário\documents\projetotp1-master\testes.cpp
+	"Testes.h"
+
+1687797953 c:\users\usuário\documents\projetotp1-master\testes.h
+	"Dominios.h"
+	"Entidades.h"
+
