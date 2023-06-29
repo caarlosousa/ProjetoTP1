@@ -903,5 +903,29 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
         return;
     }
 }
+//SERVICO TESTE--------------------------------------------------------
+bool CntrISCasoDeTeste::cadastrar(const CasoDeTeste &casoDeTeste) {
+    ComandoCadastrarCasoDeTeste cadastrarCasoDeTeste(casoDeTeste);
+    return cadastrarCasoDeTeste.executar();
+}
+
+CasoDeTeste CntrISCasoDeTeste::visualizar(const Codigo &codigo) {
+    ComandoPesquisarCasosDeTeste pesquisarCasoDeTeste(codigo);
+    pesquisarTeste.executar();
+    Teste teste;
+    teste = pesquisarTeste.getResultado();
+
+    return teste;
+}
+
+bool CntrISCasoDeTeste::editar(const CasoDeTeste &casoDeTeste) {
+    ComandoAtualizarCasoDeTeste atualizarCasoDeTeste(casoDeTeste);
+    return atualizarCasoDeTeste.executar();
+}
+
+bool CntrISTeste::descadastrar(const Codigo &codigo) {
+    ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigo);
+    return deletarCasoDeTeste.executar();
+}
 
 // SERVICO CASO DE TESTE

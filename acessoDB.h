@@ -146,6 +146,12 @@ public:
     ComandoPesquisarCodigosCasodeTestes(Matricula);
     list<Codigo> getResultado();
 };
+//-------------------------------------------------------------------------
+class ComandoPesquisarCasoDeTeste:public ComandoSQL {
+public:
+    ComandoPesquisarCasoDeTeste(Codigo);
+    CasoDeTeste getResultado();
+};
 
 //---------------------------------------------------------------------------
 

@@ -123,7 +123,6 @@ class CntrISTeste: public ISTeste {
 };
 
 class CntrISCasoDeTeste: public ISCasoDeTeste {
-    private:
     public:
         bool cadastrar(const CasoDeTeste&);
         CasoDeTeste visualizar(const CasoDeTeste&);
