@@ -28,7 +28,7 @@ int main(){
     cntrISAutenticacao = new CntrISAutenticacao();
     cntrISDesenvolvedor = new CntrISDesenvolvedor();
     cntrISTeste = new CntrISTeste();
-    cntrISCasoDeTeste = new CntrIACasoDeTeste();
+    cntrISCasoDeTeste = new CntrISCasoDeTeste();
 
     cntrAControle->setCntrAAutenticacao(cntrAAutenticacao);
     cntrAControle->setCntrADesenvolvedor(cntrADesenvolvedor);

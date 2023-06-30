@@ -31,9 +31,9 @@ class ISTeste {
 class ISCasoDeTeste {
     public:
         virtual bool cadastrar(const CasoDeTeste&) = 0;
-        virtual CasoDeTeste visualizar(const CasoDeTeste&) = 0;
+        virtual CasoDeTeste visualizar(const Codigo&) = 0;
         virtual bool editar(const CasoDeTeste&) = 0;
-        virtual bool descadastrar(const CasoDeTeste&) = 0;
+        virtual bool descadastrar(const Codigo&) = 0;
         virtual ~ISCasoDeTeste(){}
 };
 

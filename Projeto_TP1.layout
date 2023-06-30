@@ -2,6 +2,34 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
+=======
+	<File name="acessoDB.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="326" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="Entidades.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2225" topLine="100" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1375" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="acessoDB.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11435" topLine="361" />
+		</Cursor>
+	</File>
+	<File name="Dominios.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="704" topLine="53" />
+		</Cursor>
+	</File>
+>>>>>>> c4f114faf32ee124633e3fa3234306e5d1ce5fa6
 	<File name="sqlite3.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
@@ -14,12 +42,16 @@
 	</File>
 	<File name="Dominios.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6290" topLine="51" />
+			<Cursor1 position="6290" topLine="139" />
 		</Cursor>
 	</File>
 	<File name="Controladoras.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="24433" topLine="852" />
+=======
+			<Cursor1 position="26046" topLine="926" />
+>>>>>>> c4f114faf32ee124633e3fa3234306e5d1ce5fa6
 		</Cursor>
 	</File>
 	<File name="Testes.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -34,12 +66,16 @@
 	</File>
 	<File name="Controladoras.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="2685" topLine="89" />
 		</Cursor>
 	</File>
 	<File name="acessoDB.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4713" topLine="143" />
+=======
+			<Cursor1 position="2831" topLine="81" />
+>>>>>>> c4f114faf32ee124633e3fa3234306e5d1ce5fa6
 		</Cursor>
 	</File>
 	<File name="Testes.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,6 +83,7 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="Dominios.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="704" topLine="0" />
@@ -60,6 +97,11 @@
 	<File name="Entidades.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="24" />
+=======
+	<File name="Interfaces.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1944" topLine="19" />
+>>>>>>> c4f114faf32ee124633e3fa3234306e5d1ce5fa6
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
