@@ -1085,10 +1085,10 @@ bool CntrISCasoDeTeste::cadastrar(const CasoDeTeste &casoDeTeste) {
 }
 
 CasoDeTeste CntrISCasoDeTeste::visualizar(const Codigo &codigo) {
-    ComandoPesquisarCasosDeTeste pesquisarCasoDeTeste(codigo);
-    pesquisarTeste.executar();
+    ComandoPesquisarCasoDeTeste pesquisarCasoDeTeste(codigo);
+    pesquisarCasoDeTeste.executar();
     CasoDeTeste casoDeTeste;
-    casoDeTeste = pesquisarTeste.getResultado();
+    casoDeTeste = pesquisarCasoDeTeste.getResultado();
 
     return casoDeTeste;
 }

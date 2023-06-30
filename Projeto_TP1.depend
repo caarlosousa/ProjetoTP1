@@ -538,3 +538,9 @@
 1688082788 c:\users\usuário\documents\projetotp1-master\controladoras.h
 	"Interfaces.h"
 
+1688083275 source:c:\users\usuário\documents\projetotp1-master\controladoras.cpp
+	"Controladoras.h"
+	"Dominios.h"
+	"Entidades.h"
+	"acessoDB.h"
+
