@@ -228,28 +228,24 @@ Teste ComandoPesquisarTeste::getResultado() {
 
     Teste teste;
 
-    // Remover codigo;
     if (listaResultado.empty())
             throw "not found";
     resultado = listaResultado.back();
     listaResultado.pop_back();
     codigo.setValor(resultado.getValorColuna());
 
-    // Remover classe;
     if (listaResultado.empty())
             throw "not found";
     resultado = listaResultado.back();
     listaResultado.pop_back();
     nome.setValor(resultado.getValorColuna());
 
-    // Remover descricao;
     if (listaResultado.empty())
             throw "not found";
     resultado = listaResultado.back();
     listaResultado.pop_back();
     classe.setValor(resultado.getValorColuna());
 
-    // Remover endereco;
     if (listaResultado.empty())
             throw "not found";
     resultado = listaResultado.back();
@@ -371,6 +367,80 @@ list<CasoDeTeste> ComandoPesquisarCasosDeTestes::getResultado() {
         casosDeTestes.push_back(casoDeTeste);
     }
     return casosDeTestes;
+}
+//---------------------------------------------------------------------------
+//Classe ComandoPesquisarTeste.
+ComandoPesquisarCasoDeTeste::ComandoPesquisarCasoDeTeste(Codigo codigo) {
+    comandoSQL = "SELECT * FROM caso_de_teste WHERE codigoC = '";
+    comandoSQL += codigo.getValor();
+    comandoSQL += "'";
+}
+
+CasoDeTeste ComandoPesquisarCasoDeTeste::getResultado() {
+    ElementoResultado resultado;
+
+    Codigo codigo;
+    Texto nome;
+    Data data;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado2;
+    Codigo codigoteste;
+
+
+    CasoDeTeste casoDeTeste;
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    codigo.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    nome.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    data.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    acao.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    resposta.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    resultado2.setValor(resultado.getValorColuna());
+
+    if (listaResultado.empty())
+            throw "not found";
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    codigoteste.setValor(resultado.getValorColuna());
+
+    casoDeTeste.setCodigo(codigo);
+    casoDeTeste.setNome(nome);
+    casoDeTeste.setData(data);
+    casoDeTeste.setAcao(acao);
+    casoDeTeste.setResposta(resposta);
+    casoDeTeste.setResultado(resultado2);
+    casoDeTeste.setCodigoTeste(codigoteste);
+
+    return casoDeTeste;
 }
 ComandoDeletarDesenvolvedor::ComandoDeletarDesenvolvedor(Matricula matricula) {
         comandoSQL = "DELETE FROM desenvolvedor WHERE matricula = '";

@@ -28,6 +28,15 @@ class ISTeste {
         virtual ~ISTeste(){}
 };
 
+class ISCasoDeTeste {
+    public:
+        virtual bool cadastrar(const CasoDeTeste&) = 0;
+        virtual CasoDeTeste visualizar(const Codigo&) = 0;
+        virtual bool editar(const CasoDeTeste&) = 0;
+        virtual bool descadastrar(const Codigo&) = 0;
+        virtual ~ISCasoDeTeste(){}
+};
+
 class IAAutenticacao {
     public:
         virtual bool autenticar(Matricula*) = 0;
@@ -48,6 +57,13 @@ class IATeste {
         virtual void executar(Matricula) = 0;
         virtual void setCntrISTeste(ISTeste*) = 0;
         virtual ~IATeste(){}
+};
+
+class IACasoDeTeste {
+    public:
+        virtual void executar(Matricula) = 0;
+        virtual void setCntrISCasoDeTeste(ISCasoDeTeste*) = 0;
+        virtual ~IACasoDeTeste(){}
 };
 
 #endif // INTERFACES_H_INCLUDED

@@ -11,11 +11,13 @@ class CntrAControle {
         IAAutenticacao *cntrAAutenticacao;
         IADesenvolvedor *cntrADesenvolvedor;
         IATeste *cntrATeste;
+        IACasoDeTeste *cntrACasoDeTeste;
     public:
         void executar();
         void setCntrAAutenticacao(IAAutenticacao*);
         void setCntrADesenvolvedor(IADesenvolvedor*);
         void setCntrATeste(IATeste*);
+        void setCntrACasoDeTeste(IACasoDeTeste*);
 };
 
 void inline CntrAControle::setCntrAAutenticacao(IAAutenticacao* cntr) {
@@ -28,6 +30,10 @@ void inline CntrAControle::setCntrADesenvolvedor(IADesenvolvedor* cntr) {
 
 void inline CntrAControle::setCntrATeste(IATeste* cntr) {
     cntrATeste = cntr;
+}
+
+void inline CntrAControle::setCntrACasoDeTeste(IACasoDeTeste* cntr) {
+    cntrACasoDeTeste = cntr;
 }
 
 class CntrIAAutenticacao: public IAAutenticacao {
@@ -74,6 +80,22 @@ void inline CntrIATeste::setCntrISTeste(ISTeste* cntrISTeste) {
     this->cntrISTeste = cntrISTeste;
 }
 
+class CntrIACasoDeTeste: public IACasoDeTeste {
+    private:
+        ISCasoDeTeste *cntrISCasoDeTeste;
+        void cadastrar(Matricula);
+        void visualizar(Matricula);
+        void editar(Matricula);
+        bool descadastrar(Matricula);
+    public:
+        void executar(Matricula);
+        void setCntrISCasoDeTeste(ISCasoDeTeste*);
+};
+
+void inline CntrIACasoDeTeste::setCntrISCasoDeTeste(ISCasoDeTeste* cntrISCasoDeTeste) {
+    this->cntrISCasoDeTeste = cntrISCasoDeTeste;
+}
+
 class CntrISAutenticacao: public ISAutenticacao {
     public:
         bool autenticar(const Matricula&, const Senha&);
@@ -97,6 +119,14 @@ class CntrISTeste: public ISTeste {
         bool cadastrar(const Teste&);
         Teste visualizar(const Codigo&);
         bool editar(const Teste&);
+        bool descadastrar(const Codigo&);
+};
+
+class CntrISCasoDeTeste: public ISCasoDeTeste {
+    public:
+        bool cadastrar(const CasoDeTeste&);
+        CasoDeTeste visualizar(const Codigo&);
+        bool editar(const CasoDeTeste&);
         bool descadastrar(const Codigo&);
 };
 
