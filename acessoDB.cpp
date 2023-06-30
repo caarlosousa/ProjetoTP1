@@ -369,14 +369,14 @@ list<CasoDeTeste> ComandoPesquisarCasosDeTestes::getResultado() {
     return casosDeTestes;
 }
 //---------------------------------------------------------------------------
-//Classe ComandoPesquisarTeste.
+//Classe ComandoPesquisarCasoDeTeste.
 ComandoPesquisarCasoDeTeste::ComandoPesquisarCasoDeTeste(Codigo codigo) {
     comandoSQL = "SELECT * FROM caso_de_teste WHERE codigoC = '";
     comandoSQL += codigo.getValor();
     comandoSQL += "'";
 }
 
-Teste ComandoPesquisarTeste::getResultado() {
+CasoDeTeste ComandoPesquisarCasoDeTeste::getResultado() {
     ElementoResultado resultado;
 
     Codigo codigo;
@@ -440,7 +440,7 @@ Teste ComandoPesquisarTeste::getResultado() {
     casoDeTeste.setResultado(resultado2);
     casoDeTeste.setCodigoTeste(codigoteste);
 
-    return casoDeteste;
+    return casoDeTeste;
 }
 ComandoDeletarDesenvolvedor::ComandoDeletarDesenvolvedor(Matricula matricula) {
         comandoSQL = "DELETE FROM desenvolvedor WHERE matricula = '";

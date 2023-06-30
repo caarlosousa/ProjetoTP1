@@ -790,7 +790,7 @@ void CntrIACasoDeTeste::executar(Matricula matricula) {
         }
     }
 }
-
+//tem q informar o campo codigoTeste
 void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
 
     char texto1[] = "Insira os dados do seu caso de teste: ";
@@ -850,7 +850,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     caso_de_teste.setAcao(acao);
     caso_de_teste.setResposta(resposta);
     caso_de_teste.setResultado(resultado);
-    caso_de_teste.setMatricula(matricula);
+    caso_de_teste.setCodigoTeste(codigoTeste);
 
     if(CntrISCasoDeTeste->cadastrar(caso_de_teste)) {
         cout << texto8 << endl;
@@ -887,7 +887,7 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
 
     try {
         codigo.setValor(campo);
-        caso_de_teste = cntrISCasoDeTeste->visualizar(codigo);
+        caso_de_teste = CntrISCasoDeTeste->visualizar(codigo);
         cout << texto2 << caso_de_teste.getCodigo().getValor() << endl;
         cout << texto3 << caso_de_teste.getNome().getValor() << endl;
         cout << texto4 << caso_de_teste.getData().getValor() << endl;
@@ -910,10 +910,10 @@ bool CntrISCasoDeTeste::cadastrar(const CasoDeTeste &casoDeTeste) {
 }
 
 CasoDeTeste CntrISCasoDeTeste::visualizar(const Codigo &codigo) {
-    ComandoPesquisarCasosDeTeste pesquisarCasoDeTeste(codigo);
-    pesquisarTeste.executar();
+    ComandoPesquisarCasoDeTeste pesquisarCasoDeTeste(codigo);
+    pesquisarCasoDeTeste.executar();
     CasoDeTeste casoDeTeste;
-    casoDeTeste = pesquisarTeste.getResultado();
+    casoDeTeste = pesquisarCasoDeTeste.getResultado();
 
     return casoDeTeste;
 }
@@ -923,7 +923,7 @@ bool CntrISCasoDeTeste::editar(const CasoDeTeste &casoDeTeste) {
     return atualizarCasoDeTeste.executar();
 }
 
-bool CntrISTeste::descadastrar(const Codigo &codigo) {
+bool CntrISCasoDeTeste::descadastrar(const Codigo &codigo) {
     ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigo);
     return deletarCasoDeTeste.executar();
 }

@@ -230,7 +230,7 @@
 	"acessoDB.h"
 	<stdexcept>
 
-1688043623 c:\users\daviv\projetotp1\acessodb.h
+1688044700 c:\users\daviv\projetotp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -520,6 +520,6 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1688043623 source:c:\users\daviv\projetotp1\acessodb.cpp
+1688131854 source:c:\users\daviv\projetotp1\acessodb.cpp
 	"acessoDB.h"
 

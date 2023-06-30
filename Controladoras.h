@@ -125,9 +125,9 @@ class CntrISTeste: public ISTeste {
 class CntrISCasoDeTeste: public ISCasoDeTeste {
     public:
         bool cadastrar(const CasoDeTeste&);
-        CasoDeTeste visualizar(const CasoDeTeste&);
+        CasoDeTeste visualizar(const Codigo&);
         bool editar(const CasoDeTeste&);
-        bool descadastrar(const CasoDeTeste&);
+        bool descadastrar(const Codigo&);
 };
 
 #endif // CONTROLADORAS_H_INCLUDED
