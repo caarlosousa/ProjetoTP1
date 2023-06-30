@@ -376,7 +376,7 @@ ComandoPesquisarCasoDeTeste::ComandoPesquisarCasoDeTeste(Codigo codigo) {
     comandoSQL += "'";
 }
 
-Teste ComandoPesquisarTeste::getResultado() {
+CasoDeTeste ComandoPesquisarCasoDeTeste::getResultado() {
     ElementoResultado resultado;
 
     Codigo codigo;
@@ -440,7 +440,7 @@ Teste ComandoPesquisarTeste::getResultado() {
     casoDeTeste.setResultado(resultado2);
     casoDeTeste.setCodigoTeste(codigoteste);
 
-    return casoDeteste;
+    return casoDeTeste;
 }
 ComandoDeletarDesenvolvedor::ComandoDeletarDesenvolvedor(Matricula matricula) {
         comandoSQL = "DELETE FROM desenvolvedor WHERE matricula = '";
