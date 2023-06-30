@@ -368,6 +368,18 @@ list<CasoDeTeste> ComandoPesquisarCasosDeTestes::getResultado() {
     }
     return casosDeTestes;
 }
+//Classe ComandoAtualizarCasoDeTeste.
+
+ComandoAtualizarCasoDeTeste::ComandoAtualizarCasoDeTeste(CasoDeTeste casoDeTeste) {
+    comandoSQL = "UPDATE caso_de_teste ";
+    comandoSQL += "SET nome = '" + casoDeTeste.getNome().getValor();
+    comandoSQL += "', data = '" + casoDeTeste.getData().getValor();
+    comandoSQL += "', acao = '" + casoDeTeste.getAcao().getValor();
+    comandoSQL += "', resposta = '" + casoDeTeste.getResposta().getValor();
+    comandoSQL += "', resultado = '" + casoDeTeste.getResultado().getValor();
+    comandoSQL += "', codigoteste = '" + casoDeTeste.getCodigoTeste().getValor();
+    comandoSQL += "' WHERE codigoC = '" + casoDeTeste.getCodigo().getValor() + "'";
+}
 //---------------------------------------------------------------------------
 //Classe ComandoPesquisarCasoDeTeste.
 ComandoPesquisarCasoDeTeste::ComandoPesquisarCasoDeTeste(Codigo codigo) {
@@ -460,3 +472,21 @@ ComandoDeletarCasoDeTeste::ComandoDeletarCasoDeTeste(Codigo codigoC) {
         comandoSQL += "'";
 }
 
+ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste) {
+    comandoSQL = "INSERT INTO caso_de_teste VALUES (";
+    comandoSQL += "'";
+    comandoSQL += casoDeTeste.getCodigo().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getNome().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getData().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getAcao().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getResposta().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getResultado().getValor();
+    comandoSQL += "', '";
+    comandoSQL += casoDeTeste.getCodigoTeste().getValor();
+    comandoSQL += "')";
+}

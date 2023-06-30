@@ -813,7 +813,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     Texto acao;
     Texto resposta;
     Resultado resultado;
-    Codigo casoDeTeste;
+    Codigo codigoTeste;
 
     CLR_SCR;
 
@@ -840,7 +840,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
         acao.setValor(string(campo4));
         resposta.setValor(string(campo5));
         resultado.setValor(string(campo6));
-        casoDeTeste.setValor(string(campo7));
+        codigoTeste.setValor(string(campo7));
     }
     catch(invalid_argument &excecao) {
         cout << texto10 << endl;
@@ -855,11 +855,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     caso_de_teste.setAcao(acao);
     caso_de_teste.setResposta(resposta);
     caso_de_teste.setResultado(resultado);
-<<<<<<< HEAD
     caso_de_teste.setCodigoTeste(codigoTeste);
-=======
-    caso_de_teste.setCodigoTeste(casoDeTeste);
->>>>>>> c4f114faf32ee124633e3fa3234306e5d1ce5fa6
 
     if(cntrISCasoDeTeste->cadastrar(caso_de_teste)) {
         cout << texto8 << endl;
@@ -897,7 +893,7 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
 
     try {
         codigo.setValor(campo);
-        caso_de_teste = CntrISCasoDeTeste->visualizar(codigo);
+        caso_de_teste = cntrISCasoDeTeste->visualizar(codigo);
         cout << texto2 << caso_de_teste.getCodigo().getValor() << endl;
         cout << texto3 << caso_de_teste.getNome().getValor() << endl;
         cout << texto4 << caso_de_teste.getData().getValor() << endl;
