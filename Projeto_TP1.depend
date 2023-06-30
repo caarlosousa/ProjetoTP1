@@ -370,10 +370,10 @@
 1687828101 source:/home/marcos/projects/UnB/TP1/Trabalho2/ProjetoTP1/acessoDB.cpp
 	"acessoDB.h"
 
-1687901123 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.cpp
+1688086892 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.cpp
 	"acessoDB.h"
 
-1687893584 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.h
+1688086892 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -396,23 +396,23 @@
 1687821507 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\sqlite3.h
 	<stdarg.h>
 
-1687905438 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.cpp
+1688086892 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
 	"acessoDB.h"
 
-1687901123 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.h
+1688086892 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\controladoras.h
 	"Interfaces.h"
 
-1687901665 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\interfaces.h
+1688086892 c:\users\marco\desktop\trabalhotp1-certo\projetotp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
 1687821507 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\dominios.cpp
 	"Dominios.h"
 
-1687901610 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\main.cpp
+1688086892 source:c:\users\marco\desktop\trabalhotp1-certo\projetotp1\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
