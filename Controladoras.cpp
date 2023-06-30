@@ -421,7 +421,7 @@ bool CntrISDesenvolvedor::descadastrar(const Matricula &matricula) {
         casoDeTeste = casosDeTestes.back();
         testes.pop_back();
         codigoCaso = casoDeTeste.getCodigo();
-        ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigoTeste);
+        ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigoCaso);
         deletarCasoDeTeste.executar();
     }
 
