@@ -14,9 +14,10 @@ void CntrAControle::executar(){
     char texto5[] = "Selecione um dos servicos: ";
     char texto6[] = "1 - Servicos de desenvolvedor.";
     char texto7[] = "2 - Servicos de teste.";
-    char texto8[] = "3 - Encerrar sessao.";
+    char texto8[] = "3 - Servicos de caso de teste.";
+    char texto9[] = "4 - Encerrar sessao.";
 
-    char texto9[] = "Dados incorretos ou falha na autenticacao. Tente novamente.";
+    char texto10[] = "Dados incorretos ou falha na autenticacao. Tente novamente.";
 
     int campo;
 
@@ -42,6 +43,7 @@ void CntrAControle::executar(){
                         cout << texto6 << endl;
                         cout << texto7 << endl;
                         cout << texto8 << endl;
+                        cout << texto9 << endl;
 
                         campo = getch() - 48;
 
@@ -57,13 +59,15 @@ void CntrAControle::executar(){
                             case 2:
                                 cntrATeste->executar(matricula);
                                 break;
-                            case 3: apresentar = false;
+                            case 3:
+                                cntrACasoDeTeste->executar(matricula);
+                            case 4: apresentar = false;
                                 break;
                         }
                     }
                 } else {
                     CLR_SCR;
-                    cout << texto9 << endl;
+                    cout << texto10 << endl;
                     getch();
                 }
                 break;
@@ -748,10 +752,10 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
 void CntrIACasoDeTeste::executar(Matricula matricula) {
 
     char texto1[] = "Selecione um dos servicos: ";
-    char texto2[] = "1 - Visualizar Caso de teste.";
-    char texto3[] = "2 - Cadastrar Caso de teste.";
-    char texto4[] = "3 - Editar Caso de teste.";
-    char texto5[] = "4 - Descadastrar Caso de teste.";
+    char texto2[] = "1 - Visualizar caso de teste.";
+    char texto3[] = "2 - Cadastrar caso de teste.";
+    char texto4[] = "3 - Editar caso de teste.";
+    char texto5[] = "4 - Descadastrar caso de teste.";
     char texto6[] = "5 - Retornar.";
 
     int campo;
@@ -803,7 +807,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     char texto8[] = "Caso de teste cadastrado com sucesso. Digite algo para continuar.";
     char texto9[] = "Erro ao cadastrar caso de teste. Digite algo para continuar.";
     char texto10[] = "Formato invalido. Digite algo para continuar.";
-    char texto11[] = "Código correspondente ao teste: ";
+    char texto11[] = "Codigo correspondente ao teste: ";
 
     string campo1, campo2, campo3, campo4, campo5, campo6, campo7;
 
@@ -874,12 +878,12 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
     CLR_SCR;
 
     char texto1[] = "Digite o codigo do caso de teste que deseja visualizar: ";
-    char texto2[] = "Codigo:";
-    char texto3[] = "Nome:";
-    char texto4[] = "Data:";
-    char texto5[] = "Acao:";
-    char texto6[] = "Resposta";
-    char texto7[] = "Resultado:";
+    char texto2[] = "Codigo: ";
+    char texto3[] = "Nome: ";
+    char texto4[] = "Data: ";
+    char texto5[] = "Acao: ";
+    char texto6[] = "Resposta ";
+    char texto7[] = "Resultado: ";
     char texto8[] = "Digite qualquer tecla para continuar.";
     char texto9[] = "Formato invalido. Tente novamente.";
     char texto10[] = "Código do teste correspondente: ";
@@ -1018,7 +1022,6 @@ void CntrIACasoDeTeste::editar(Matricula matricula) {
     } else {
         cout << texto16 << endl;
     }
-    cout << texto16 << endl;
     getch();
 }
 

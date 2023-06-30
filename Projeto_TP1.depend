@@ -484,7 +484,7 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1687905910 source:c:\users\usuário\documents\projetotp1-master\acessodb.cpp
+1688151267 source:c:\users\usuário\documents\projetotp1-master\acessodb.cpp
 	"acessoDB.h"
 
 1688047346 c:\users\usuário\documents\projetotp1-master\acessodb.h
@@ -538,7 +538,7 @@
 1688082788 c:\users\usuário\documents\projetotp1-master\controladoras.h
 	"Interfaces.h"
 
-1688083275 source:c:\users\usuário\documents\projetotp1-master\controladoras.cpp
+1688151513 source:c:\users\usuário\documents\projetotp1-master\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
