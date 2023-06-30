@@ -14,9 +14,10 @@ void CntrAControle::executar(){
     char texto5[] = "Selecione um dos servicos: ";
     char texto6[] = "1 - Servicos de desenvolvedor.";
     char texto7[] = "2 - Servicos de teste.";
-    char texto8[] = "3 - Encerrar sessao.";
+    char texto8[] = "3 - Servicos de caso de teste.";
+    char texto9[] = "4 - Encerrar sessao.";
 
-    char texto9[] = "Dados incorretos ou falha na autenticacao. Tente novamente.";
+    char texto10[] = "Dados incorretos ou falha na autenticacao. Tente novamente.";
 
     int campo;
 
@@ -42,6 +43,7 @@ void CntrAControle::executar(){
                         cout << texto6 << endl;
                         cout << texto7 << endl;
                         cout << texto8 << endl;
+                        cout << texto9 << endl;
 
                         campo = getch() - 48;
 
@@ -57,13 +59,16 @@ void CntrAControle::executar(){
                             case 2:
                                 cntrATeste->executar(matricula);
                                 break;
-                            case 3: apresentar = false;
+                            case 3:
+                                cntrACasoDeTeste->executar(matricula);
+                                break;
+                            case 4: apresentar = false;
                                 break;
                         }
                     }
                 } else {
                     CLR_SCR;
-                    cout << texto9 << endl;
+                    cout << texto10 << endl;
                     getch();
                 }
                 break;
@@ -210,22 +215,32 @@ void CntrIADesenvolvedor::cadastrar() {
         return;
     }
 
-    Desenvolvedor desenvolvedor;
-    desenvolvedor.setNome(nome);
-    desenvolvedor.setMatricula(matricula);
-    desenvolvedor.setSenha(senha);
-    desenvolvedor.setTelefone(telefone);
+    try {
+        Desenvolvedor existente;
+        existente = cntrISDesenvolvedor->visualizar(matricula);
+    }
+    catch(...) {
+        Desenvolvedor desenvolvedor;
+        desenvolvedor.setNome(nome);
+        desenvolvedor.setMatricula(matricula);
+        desenvolvedor.setSenha(senha);
+        desenvolvedor.setTelefone(telefone);
 
-    if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
-        cout << texto7 << endl;
+        if(cntrISDesenvolvedor->cadastrar(desenvolvedor)) {
+            cout << texto7 << endl;
+            getch();
+            return;
+        }
+
+        cout << texto8 << endl;
         getch();
+
         return;
     }
 
-    cout << texto8 << endl;
-    getch();
-
-    return;
+    cout << texto9 << endl;
+        getch();
+        return;
 }
 
 void CntrIADesenvolvedor::visualizar(Matricula matricula) {
@@ -596,6 +611,7 @@ void CntrIATeste::visualizar(Matricula matricula) {
         cout << texto4 << teste.getClasse().getValor() << endl;
         cout << texto5 << endl;
         getch();
+        return;
     }
     catch (...) {
         cout << texto6 << endl;
@@ -655,7 +671,6 @@ void CntrIATeste::editar(Matricula matricula) {
             cout << texto7 << endl;
 
             cout << texto4;
-            cin.ignore();
             getline(cin, campo1);
 
             cout << texto5;
@@ -677,6 +692,7 @@ void CntrIATeste::editar(Matricula matricula) {
                 return;
             }
             getch();
+            return;
         }
     }
     if (cntrISTeste->editar(teste)) {
@@ -684,8 +700,9 @@ void CntrIATeste::editar(Matricula matricula) {
     } else {
         cout << texto12 << endl;
     }
-    cout << texto12 << endl;
+
     getch();
+    return;
 }
 
 bool CntrIATeste::descadastrar(Matricula matricula) {
@@ -748,10 +765,10 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
 void CntrIACasoDeTeste::executar(Matricula matricula) {
 
     char texto1[] = "Selecione um dos servicos: ";
-    char texto2[] = "1 - Visualizar Caso de teste.";
-    char texto3[] = "2 - Cadastrar Caso de teste.";
-    char texto4[] = "3 - Editar Caso de teste.";
-    char texto5[] = "4 - Descadastrar Caso de teste.";
+    char texto2[] = "1 - Visualizar caso de teste.";
+    char texto3[] = "2 - Cadastrar caso de teste.";
+    char texto4[] = "3 - Editar caso de teste.";
+    char texto5[] = "4 - Descadastrar caso de teste.";
     char texto6[] = "5 - Retornar.";
 
     int campo;
@@ -798,12 +815,12 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     char texto3[] = "Nome:";
     char texto4[] = "Data:";
     char texto5[] = "Acao:";
-    char texto6[] = "Resposta";
+    char texto6[] = "Resposta:";
     char texto7[] = "Resultado:";
     char texto8[] = "Caso de teste cadastrado com sucesso. Digite algo para continuar.";
     char texto9[] = "Erro ao cadastrar caso de teste. Digite algo para continuar.";
     char texto10[] = "Formato invalido. Digite algo para continuar.";
-    char texto11[] = "Código correspondente ao teste: ";
+    char texto11[] = "Codigo correspondente ao teste: ";
 
     string campo1, campo2, campo3, campo4, campo5, campo6, campo7;
 
@@ -874,15 +891,15 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
     CLR_SCR;
 
     char texto1[] = "Digite o codigo do caso de teste que deseja visualizar: ";
-    char texto2[] = "Codigo:";
-    char texto3[] = "Nome:";
-    char texto4[] = "Data:";
-    char texto5[] = "Acao:";
-    char texto6[] = "Resposta";
-    char texto7[] = "Resultado:";
+    char texto2[] = "Codigo: ";
+    char texto3[] = "Nome: ";
+    char texto4[] = "Data: ";
+    char texto5[] = "Acao: ";
+    char texto6[] = "Resposta ";
+    char texto7[] = "Resultado: ";
     char texto8[] = "Digite qualquer tecla para continuar.";
     char texto9[] = "Formato invalido. Tente novamente.";
-    char texto10[] = "Código do teste correspondente: ";
+    char texto10[] = "Codigo do teste correspondente: ";
 
     string campo;
     Codigo codigo;
@@ -1018,7 +1035,6 @@ void CntrIACasoDeTeste::editar(Matricula matricula) {
     } else {
         cout << texto16 << endl;
     }
-    cout << texto16 << endl;
     getch();
 }
 
