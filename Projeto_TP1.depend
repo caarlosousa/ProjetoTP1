@@ -215,7 +215,7 @@
 	<stdexcept>
 	<regex>
 
-1687634627 source:c:\users\daviv\projetotp1\main.cpp
+1688133083 source:c:\users\daviv\projetotp1\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -226,11 +226,11 @@
 1688043623 c:\users\daviv\projetotp1\entidades.h
 	"Dominios.h"
 
-1687645307 c:\users\daviv\projetotp1\interfaces.h
+1688133083 c:\users\daviv\projetotp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
-1688043623 c:\users\daviv\projetotp1\acessodb.h
+1688044700 c:\users\daviv\projetotp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -243,7 +243,7 @@
 1688043623 c:\users\daviv\projetotp1\sqlite3.h
 	<stdarg.h>
 
-1687643429 c:\users\daviv\projetotp1\controladoras.h
+1688133083 c:\users\daviv\projetotp1\controladoras.h
 	"Interfaces.h"
 
 1688043623 source:c:\users\daviv\projetotp1\testes.cpp
@@ -253,7 +253,7 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1687646537 source:c:\users\daviv\projetotp1\controladoras.cpp
+1688137405 source:c:\users\daviv\projetotp1\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
@@ -520,7 +520,7 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1688043623 source:c:\users\daviv\projetotp1\acessodb.cpp
+1688131854 source:c:\users\daviv\projetotp1\acessodb.cpp
 	"acessoDB.h"
 
 1688080104 source:c:\users\usuário\documents\projetotp1-master\main.cpp
