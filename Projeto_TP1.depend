@@ -34,24 +34,24 @@
 	"Entidades.h"
 	"Testes.h"
 
-1686862052 source:c:\users\usuário\documents\tp1\dominios.cpp
+1686862052 source:c:\users\usuï¿½rio\documents\tp1\dominios.cpp
 	"Dominios.h"
 
-1686862052 c:\users\usuário\documents\tp1\dominios.h
+1686862052 c:\users\usuï¿½rio\documents\tp1\dominios.h
 	<string>
 	<iostream>
 	<unordered_set>
 	<stdexcept>
 	<regex>
 
-1686862052 source:c:\users\usuário\documents\tp1\testes.cpp
+1686862052 source:c:\users\usuï¿½rio\documents\tp1\testes.cpp
 	"Testes.h"
 
-1686862052 c:\users\usuário\documents\tp1\testes.h
+1686862052 c:\users\usuï¿½rio\documents\tp1\testes.h
 	"Dominios.h"
 	"Entidades.h"
 
-1687543350 c:\users\usuário\documents\tp1\entidades.h
+1687543350 c:\users\usuï¿½rio\documents\tp1\entidades.h
 	"Dominios.h"
 
 1687543350 D
@@ -171,18 +171,18 @@
 	<stdarg.h>
 	<stdarg.h>
 
-1687626282 source:c:\users\usuário\documents\tp1\controladoras.cpp
+1687626282 source:c:\users\usuï¿½rio\documents\tp1\controladoras.cpp
 	"controladoras.h"
 	"Controladoras.h"
 
-1687626282 c:\users\usuário\documents\tp1\controladoras.h
+1687626282 c:\users\usuï¿½rio\documents\tp1\controladoras.h
 	"Interfaces.h"
 
-1687626281 c:\users\usuário\documents\tp1\interfaces.h
+1687626281 c:\users\usuï¿½rio\documents\tp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
-1687626281 c:\users\usuário\documents\tp1\acessodb.h
+1687626281 c:\users\usuï¿½rio\documents\tp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -192,10 +192,10 @@
 	<string>
 	<stdio.h>
 
-1687543350 c:\users\usuário\documents\tp1\sqlite3.h
+1687543350 c:\users\usuï¿½rio\documents\tp1\sqlite3.h
 	<stdarg.h>
 
-1687626281 source:c:\users\usuário\documents\tp1\main.cpp
+1687626281 source:c:\users\usuï¿½rio\documents\tp1\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -215,7 +215,7 @@
 	<stdexcept>
 	<regex>
 
-1687634627 source:c:\users\daviv\projetotp1\main.cpp
+1688133083 source:c:\users\daviv\projetotp1\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -226,11 +226,11 @@
 1688043623 c:\users\daviv\projetotp1\entidades.h
 	"Dominios.h"
 
-1687645307 c:\users\daviv\projetotp1\interfaces.h
+1688133083 c:\users\daviv\projetotp1\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
-1688043623 c:\users\daviv\projetotp1\acessodb.h
+1688044700 c:\users\daviv\projetotp1\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -243,7 +243,7 @@
 1688043623 c:\users\daviv\projetotp1\sqlite3.h
 	<stdarg.h>
 
-1687643429 c:\users\daviv\projetotp1\controladoras.h
+1688133083 c:\users\daviv\projetotp1\controladoras.h
 	"Interfaces.h"
 
 1688043623 source:c:\users\daviv\projetotp1\testes.cpp
@@ -253,7 +253,7 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1687646537 source:c:\users\daviv\projetotp1\controladoras.cpp
+1688137405 source:c:\users\daviv\projetotp1\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"
@@ -484,10 +484,10 @@
 	"Dominios.h"
 	"Entidades.h"
 
-1687905910 source:c:\users\usuário\documents\projetotp1-master\acessodb.cpp
+1687905910 source:c:\users\usuï¿½rio\documents\projetotp1-master\acessodb.cpp
 	"acessoDB.h"
 
-1688047346 c:\users\usuário\documents\projetotp1-master\acessodb.h
+1688047346 c:\users\usuï¿½rio\documents\projetotp1-master\acessodb.h
 	"Dominios.h"
 	"Entidades.h"
 	<list>
@@ -497,33 +497,33 @@
 	<string>
 	<stdio.h>
 
-1687797953 c:\users\usuário\documents\projetotp1-master\dominios.h
+1687797953 c:\users\usuï¿½rio\documents\projetotp1-master\dominios.h
 	<string>
 	<iostream>
 	<unordered_set>
 	<stdexcept>
 	<regex>
 
-1687797953 c:\users\usuário\documents\projetotp1-master\entidades.h
+1687797953 c:\users\usuï¿½rio\documents\projetotp1-master\entidades.h
 	"Dominios.h"
 
-1687797953 c:\users\usuário\documents\projetotp1-master\sqlite3.h
+1687797953 c:\users\usuï¿½rio\documents\projetotp1-master\sqlite3.h
 	<stdarg.h>
 
-1687797953 source:c:\users\usuário\documents\projetotp1-master\dominios.cpp
+1687797953 source:c:\users\usuï¿½rio\documents\projetotp1-master\dominios.cpp
 	"Dominios.h"
 
-1687797953 source:c:\users\usuário\documents\projetotp1-master\testes.cpp
+1687797953 source:c:\users\usuï¿½rio\documents\projetotp1-master\testes.cpp
 	"Testes.h"
 
-1687797953 c:\users\usuário\documents\projetotp1-master\testes.h
+1687797953 c:\users\usuï¿½rio\documents\projetotp1-master\testes.h
 	"Dominios.h"
 	"Entidades.h"
 
-1688043623 source:c:\users\daviv\projetotp1\acessodb.cpp
+1688131854 source:c:\users\daviv\projetotp1\acessodb.cpp
 	"acessoDB.h"
 
-1688080104 source:c:\users\usuário\documents\projetotp1-master\main.cpp
+1688080104 source:c:\users\usuï¿½rio\documents\projetotp1-master\main.cpp
 	<iostream>
 	<string>
 	"Dominios.h"
@@ -531,14 +531,14 @@
 	"Interfaces.h"
 	"Controladoras.h"
 
-1688083009 c:\users\usuário\documents\projetotp1-master\interfaces.h
+1688083009 c:\users\usuï¿½rio\documents\projetotp1-master\interfaces.h
 	"acessoDB.h"
 	<stdexcept>
 
-1688082788 c:\users\usuário\documents\projetotp1-master\controladoras.h
+1688082788 c:\users\usuï¿½rio\documents\projetotp1-master\controladoras.h
 	"Interfaces.h"
 
-1688083275 source:c:\users\usuário\documents\projetotp1-master\controladoras.cpp
+1688083275 source:c:\users\usuï¿½rio\documents\projetotp1-master\controladoras.cpp
 	"Controladoras.h"
 	"Dominios.h"
 	"Entidades.h"

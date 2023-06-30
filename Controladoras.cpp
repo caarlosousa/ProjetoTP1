@@ -790,7 +790,7 @@ void CntrIACasoDeTeste::executar(Matricula matricula) {
         }
     }
 }
-
+//tem q informar o campo codigoTeste
 void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
 
     char texto1[] = "Insira os dados do seu caso de teste: ";
@@ -813,7 +813,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     Texto acao;
     Texto resposta;
     Resultado resultado;
-    Codigo casoDeTeste;
+    Codigo codigoTeste;
 
     CLR_SCR;
 
@@ -840,7 +840,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
         acao.setValor(string(campo4));
         resposta.setValor(string(campo5));
         resultado.setValor(string(campo6));
-        casoDeTeste.setValor(string(campo7));
+        codigoTeste.setValor(string(campo7));
     }
     catch(invalid_argument &excecao) {
         cout << texto10 << endl;
@@ -855,7 +855,7 @@ void CntrIACasoDeTeste::cadastrar(Matricula matricula) {
     caso_de_teste.setAcao(acao);
     caso_de_teste.setResposta(resposta);
     caso_de_teste.setResultado(resultado);
-    caso_de_teste.setCodigoTeste(casoDeTeste);
+    caso_de_teste.setCodigoTeste(codigoTeste);
 
     if(cntrISCasoDeTeste->cadastrar(caso_de_teste)) {
         cout << texto8 << endl;
