@@ -87,13 +87,12 @@ void CntrAControle::executar(){
 bool CntrIAAutenticacao::autenticar(Matricula *matricula) {
     char texto1[]="Digite a matricula: ";
     char texto2[]="Digite a senha: ";
-    char texto3[]="Dado em formato incorreto. Digite algo.";
 
     string campo1, campo2;
-
+    bool apresentar = true;
     Senha senha;
 
-    while(true) {
+    while(apresentar) {
         CLR_SCR;
 
         cout << texto1 << " ";
@@ -104,11 +103,9 @@ bool CntrIAAutenticacao::autenticar(Matricula *matricula) {
         try {
             matricula->setValor(campo1);
             senha.setValor(campo2);
-            break;
+            apresentar = false;
         } catch (invalid_argument &exp) {
-            CLR_SCR;
-            cout << texto3 << endl;
-            getch();
+            apresentar = false;
         }
     }
     return (cntrISAutenticacao->autenticar(*matricula, senha));
@@ -419,7 +416,7 @@ bool CntrISDesenvolvedor::descadastrar(const Matricula &matricula) {
 
     while (!casosDeTestes.empty()){
         casoDeTeste = casosDeTestes.back();
-        testes.pop_back();
+        casosDeTestes.pop_back();
         codigoCaso = casoDeTeste.getCodigo();
         ComandoDeletarCasoDeTeste deletarCasoDeTeste(codigoCaso);
         deletarCasoDeTeste.executar();
@@ -595,6 +592,7 @@ void CntrIATeste::visualizar(Matricula matricula) {
     char texto4[] = "Classe: ";
     char texto5[] = "Digite qualquer tecla para continuar.";
     char texto6[] = "Formato invalido. Tente novamente.";
+    char texto7[] = "Esse teste nao esta associado a sua conta.";
 
     string campo;
     Codigo codigo;
@@ -606,6 +604,11 @@ void CntrIATeste::visualizar(Matricula matricula) {
     try {
         codigo.setValor(campo);
         teste = cntrISTeste->visualizar(codigo);
+        if (teste.getMatricula().getValor() != matricula.getValor()) {
+            cout << texto7 << endl;
+            getch();
+            return;
+        }
         cout << texto2 << teste.getCodigo().getValor() << endl;
         cout << texto3 << teste.getNome().getValor() << endl;
         cout << texto4 << teste.getClasse().getValor() << endl;
@@ -639,6 +642,7 @@ void CntrIATeste::editar(Matricula matricula) {
     char texto10[] = "2 - Retornar.";
     char texto11[] = "Teste atualizado com sucesso.";
     char texto12[] = "Falha ao editar teste.";
+    char texto13[] = "Esse teste nao esta associado a sua conta.";
 
     int campo;
     string campoCodigo, campo1, campo2;
@@ -652,6 +656,11 @@ void CntrIATeste::editar(Matricula matricula) {
     try {
         codigo.setValor(campoCodigo);
         teste = cntrISTeste->visualizar(codigo);
+        if (teste.getMatricula().getValor() != matricula.getValor()) {
+            cout << texto13 << endl;
+            getch();
+            return;
+        }
     }
     catch(...) {
         cout << texto8 << endl;
@@ -715,6 +724,7 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
     char texto6[] = "Descadastramento cancelado.";
     char texto7[] = "Descadastramento realizado com sucesso";
     char texto8[] = "Formato invalido. Pressione qualquer tecla para continaur.";
+    char texto9[] = "Esse teste nao esta associado a sua conta.";
 
     int campo;
     string campoCodigo;
@@ -727,6 +737,13 @@ bool CntrIATeste::descadastrar(Matricula matricula) {
 
     try {
         codigo.setValor(campoCodigo);
+        Teste teste;
+        teste = cntrISTeste->visualizar(codigo);
+        if (teste.getMatricula().getValor() != matricula.getValor()) {
+            cout << texto9 << endl;
+            getch();
+            return false;
+        }
     }
     catch(invalid_argument &excecao) {
         cout << texto8 << endl;
@@ -920,6 +937,7 @@ void CntrIACasoDeTeste::visualizar(Matricula matricula) {
         cout << texto10 << caso_de_teste.getCodigoTeste().getValor() << endl;
         cout << texto8 << endl;
         getch();
+        return;
     }
     catch (...) {
         cout << texto9 << endl;
@@ -991,7 +1009,6 @@ void CntrIACasoDeTeste::editar(Matricula matricula) {
             cout << texto11 << endl;
 
             cout << texto4;
-            cin.ignore();
             getline(cin, campo1);
 
             cout << texto5;
@@ -1024,7 +1041,7 @@ void CntrIACasoDeTeste::editar(Matricula matricula) {
             cout << texto13 << endl;
             cout << texto14 << endl;
             campo = getch() - 48;
-            if (campo == 5) {
+            if (campo == 2) {
                 return;
             }
             getch();
